@@ -78,6 +78,8 @@ nav.jump a{flex:0 0 auto;font-size:13px;font-weight:700;text-decoration:none;col
   background:var(--card);border:1px solid var(--line);border-radius:9px;padding:6px 12px;white-space:nowrap;
   transition:background .15s,color .15s,border-color .15s}
 nav.jump a.on{background:var(--blue);border-color:var(--blue);color:#fff}
+nav.jump a.brand{background:var(--fg);border-color:var(--fg);color:var(--bg);font-weight:800}
+nav.jump a.brand.on{background:var(--fg);border-color:var(--fg);color:var(--bg)}
 
 section{scroll-margin-top:72px;padding-top:26px}
 .sh{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:13px;
@@ -165,8 +167,7 @@ section{scroll-margin-top:72px;padding-top:26px}
 .dx .dw .ar{width:7px;height:7px;border-right:2.5px solid var(--fg3);border-bottom:2.5px solid var(--fg3);
   transform:rotate(-45deg);margin-left:2px}
 
-.dpbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);
-  padding-block:11px 10px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.dpbar{padding-block:14px 10px;display:flex;align-items:center;gap:10px}
 .dpbar button{font-family:var(--f);font-weight:800;font-size:13.5px;color:var(--fg2);background:var(--card);
   border:1px solid var(--line);border-radius:10px;padding:7px 12px;cursor:pointer;white-space:nowrap}
 .dpbar button:disabled{opacity:.35;cursor:default}
@@ -264,6 +265,17 @@ details[open] .chev::after{transform:rotate(-135deg) translate(-1px,-1px)}
 <body>
 <div class="wrap">
 
+<nav class="jump" aria-label="跳转">
+  <ul>
+    <li><a href="#top" class="brand">意大利 13 天</a></li>
+    <li><a href="#map">地图</a></li>
+    <li><a href="#flights-s">航班</a></li>
+    <li><a href="#hotels-s">住宿</a></li>
+    <li><a href="#books-s">预订</a></li>
+    <li><a href="#days-s">逐日</a></li>
+  </ul>
+</nav>
+
 <div id="home">
 
 <header class="mast" id="top">
@@ -276,16 +288,6 @@ details[open] .chev::after{transform:rotate(-135deg) translate(-1px,-1px)}
     <span><span class="lb">意大利时间</span><br><span class="hm">--:--</span> <span class="dt"></span></span>
   </div>
 </header>
-
-<nav class="jump" aria-label="跳转">
-  <ul>
-    <li><a href="#map">地图</a></li>
-    <li><a href="#flights-s">航班</a></li>
-    <li><a href="#hotels-s">住宿</a></li>
-    <li><a href="#books-s">预订</a></li>
-    <li><a href="#days-s">逐日行程</a></li>
-  </ul>
-</nav>
 
 <section id="map">
   <div class="sh"><h2>路线地图</h2><span>四个落脚点</span></div>
@@ -1023,6 +1025,21 @@ function goHome(push){
 
 document.getElementById('dayindex').innerHTML = dayIndex();
 document.addEventListener('click', e=>{
+  const nv = e.target.closest('nav.jump a');
+  if(nv){
+    const id = (nv.getAttribute('href')||'').slice(1);
+    if(!HOME.hidden){
+      if(id === 'top'){ e.preventDefault(); window.scrollTo(0,0); }
+      return;                              // 已在首页，交给浏览器默认跳转
+    }
+    e.preventDefault();
+    goHome(false);
+    if(id === 'top'){ setTimeout(()=>window.scrollTo(0,0), 20); }
+    else { const el = document.getElementById(id);
+           if(el) setTimeout(()=>el.scrollIntoView({block:'start', behavior:'auto'}), 20); }
+    try{ history.pushState({}, '', '#'+id); }catch(err){}
+    return;
+  }
   const dx = e.target.closest('.dx');
   if(dx){ openDay(+dx.dataset.day); return; }
   const b = e.target.closest('[data-act]');
