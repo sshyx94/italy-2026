@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>意大利 13 天</title>
+<meta name="description" content="2026年10月1日至13日意大利行程：航班、住宿、预订、逐日安排与路线地图。">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2D5FA8">
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img,svg{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: 单页长滚动，顶部粘性导航；地图是手绘 SVG，不依赖任何外部服务 */
+:root{
+  --bg:#FAF7F2; --card:#FFFFFF; --soft:#F2EFE8; --line:#E6E1D7;
+  --fg:#231F1A; --fg2:#6B6357; --fg3:#9A9184;
+  --blue:#2D5FA8; --blue-s:#E3ECF9;
+  --lemon:#B07A00; --lemon-s:#FBF0D5;
+  --coral:#C4503F; --coral-s:#FAE6E2;
+  --olive:#3F7350; --olive-s:#E2F0E6;
+  --plum:#7A4A99; --plum-s:#F0E7F7;
+  --sea:#E4EDF7; --land:#FFFFFF; --coast:#B9C9DC; --rt1:#2D5FA8; --rt2:#C4503F;
+  --f:ui-rounded,-apple-system,"SF Pro Rounded",system-ui,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --r:16px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141312; --card:#1E1C1A; --soft:#262320; --line:#332F2B;
+  --fg:#F0EBE4; --fg2:#B0A79B; --fg3:#7C7469;
+  --blue:#8FB4EA; --blue-s:#1B2637;
+  --lemon:#E4B455; --lemon-s:#2C2414;
+  --coral:#EE9184; --coral-s:#331D19;
+  --olive:#7FC292; --olive-s:#152A1C;
+  --plum:#C4A0DC; --plum-s:#251A2E;
+  --sea:#161E28; --land:#232C24; --coast:#3C4A56; --rt1:#8FB4EA; --rt2:#EE9184;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#141312; --card:#1E1C1A; --soft:#262320; --line:#332F2B;
+  --fg:#F0EBE4; --fg2:#B0A79B; --fg3:#7C7469;
+  --blue:#8FB4EA; --blue-s:#1B2637;
+  --lemon:#E4B455; --lemon-s:#2C2414;
+  --coral:#EE9184; --coral-s:#331D19;
+  --olive:#7FC292; --olive-s:#152A1C;
+  --plum:#C4A0DC; --plum-s:#251A2E;
+  --sea:#161E28; --land:#232C24; --coast:#3C4A56; --rt1:#8FB4EA; --rt2:#EE9184;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--fg);font-family:var(--f);font-size:15.5px;line-height:1.65;
+  -webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:0 60px}
+h1,h2,h3,h4{margin:0;font-weight:800;text-wrap:balance}
+p{margin:0}
+a{color:var(--blue)}
+
+.mast{padding-block:28px 16px}
+.mast .k{font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--fg3)}
+.mast h1{font-size:clamp(28px,7.5vw,40px);line-height:1.12;margin-top:5px}
+.mast .s{font-size:16px;color:var(--fg2);margin-top:6px}
+.who{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.who span{font-size:12px;font-weight:800;letter-spacing:.04em;border-radius:8px;padding:4px 10px}
+.who .a{background:var(--blue-s);color:var(--blue)}
+.who .b{background:var(--plum-s);color:var(--plum)}
+
+nav.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);
+  padding-block:10px;border-bottom:1px solid var(--line);margin-bottom:6px}
+nav.jump ul{display:flex;gap:7px;overflow-x:auto;list-style:none;margin:0;padding:0;scrollbar-width:none}
+nav.jump ul::-webkit-scrollbar{display:none}
+nav.jump a{flex:0 0 auto;font-size:13px;font-weight:700;text-decoration:none;color:var(--fg2);
+  background:var(--card);border:1px solid var(--line);border-radius:9px;padding:6px 12px;white-space:nowrap}
+
+section{scroll-margin-top:72px;padding-top:26px}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+.sh h2{font-size:21px}
+.sh span{font-size:12.5px;color:var(--fg3);font-weight:700;white-space:nowrap}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:11px}
+.card h3{font-size:16.5px;line-height:1.35}
+.card .sub{font-size:13px;color:var(--blue);font-weight:700;margin-top:2px}
+.rows{display:grid;gap:6px;margin-top:10px}
+.rows > div{display:grid;grid-template-columns:66px 1fr;gap:11px;font-size:14px}
+.rows dt{color:var(--fg3);font-weight:700;font-size:12.5px;padding-top:1px}
+.rows dd{margin:0;color:var(--fg2);overflow-wrap:anywhere}
+.rows dd b{color:var(--fg);font-weight:800}
+
+.map{display:block;width:100%;height:auto;max-width:100%;border-radius:var(--r);border:1px solid var(--line)}
+.mnum{font-family:var(--f);font-size:23px;font-weight:800;fill:#fff}
+.mlbl{font-family:var(--f);font-size:21px;font-weight:700;fill:var(--fg2)}
+.mlbl.big{font-size:26px;font-weight:800;fill:var(--fg)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:11px;font-size:13px;color:var(--fg2)}
+.legend i{display:inline-block;width:22px;height:0;border-top:4px solid var(--rt1);
+  border-radius:2px;vertical-align:3px;margin-right:6px}
+.legend i.d{border-top:3px dashed var(--rt2)}
+.basegrid{display:grid;gap:9px;margin-top:12px}
+@media(min-width:560px){.basegrid{grid-template-columns:1fr 1fr}}
+.base{display:grid;grid-template-columns:30px 1fr;gap:11px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.base b{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;
+  display:grid;place-content:center;font-size:14px;font-weight:800}
+.base .t{font-size:15px;font-weight:700;line-height:1.3}
+.base .t em{display:block;font-style:normal;font-size:12.5px;color:var(--fg3);font-weight:600}
+
+.fl{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;margin-bottom:10px}
+.fl .no{font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.03em}
+.fl .leg{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-top:8px}
+.fl .pl{min-width:0}
+.fl .pl .tm{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.15}
+.fl .pl .ct{font-size:13px;color:var(--fg2);margin-top:1px}
+.fl .pl.r{text-align:right}
+.fl .mid{display:grid;place-items:center;gap:2px;color:var(--fg3);white-space:nowrap;padding-inline:4px}
+.fl .mid .ln{display:block;width:44px;height:2px;background:var(--line);border-radius:2px}
+.fl .mid .pn{font-size:15px;line-height:1}
+.fl .ft{margin-top:10px;padding-top:9px;border-top:1px solid var(--line);font-size:13px;color:var(--fg2)}
+
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.03em;border-radius:6px;
+  padding:2px 7px;background:var(--soft);color:var(--fg2);margin-right:5px}
+.tag.ok{background:var(--olive-s);color:var(--olive)}
+.tag.wn{background:var(--lemon-s);color:var(--lemon)}
+.tag.cr{background:var(--coral-s);color:var(--coral)}
+.tag.bl{background:var(--blue-s);color:var(--blue)}
+.tag.pl{background:var(--plum-s);color:var(--plum)}
+
+.day{margin-bottom:18px;scroll-margin-top:72px}
+.dh{display:flex;align-items:center;gap:11px;padding-bottom:9px;border-bottom:2px solid var(--line)}
+.dh b{flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:var(--blue-s);color:var(--blue);
+  display:grid;place-content:center;text-align:center;line-height:1.05;font-size:15px;font-weight:800}
+.dh b small{display:block;font-size:10px;opacity:.8}
+.dh .t{min-width:0}
+.dh h3{font-size:19px;line-height:1.25}
+.dh .m{font-size:12.5px;color:var(--fg2);margin-top:2px}
+.tl{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.tl > li{display:grid;grid-template-columns:46px 1fr;gap:0 16px}
+.tm{text-align:right;font-size:13px;font-weight:800;color:var(--fg2);padding-top:11px;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tm em{display:block;font-style:normal;font-weight:600;font-size:11px;color:var(--fg3)}
+details{background:var(--card);border:1px solid var(--line);border-radius:13px;overflow:hidden}
+details.hi{border-color:var(--olive)}
+details.hw{border-color:var(--lemon)}
+summary{list-style:none;padding:10px 13px;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:9px;align-items:start}
+summary::-webkit-details-marker{display:none}
+.nm{font-size:15px;font-weight:700;line-height:1.4;min-width:0}
+.tgs{margin-top:5px}
+.chev{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--soft);
+  display:grid;place-content:center;margin-top:2px}
+.chev::after{content:"";width:6px;height:6px;border-right:2px solid var(--fg3);
+  border-bottom:2px solid var(--fg3);transform:rotate(45deg) translate(-1px,-1px)}
+details[open] .chev::after{transform:rotate(-135deg) translate(-1px,-1px)}
+.bd{padding:0 13px 13px;border-top:1px solid var(--line);padding-top:11px}
+.blk{border-radius:11px;padding:10px 12px;font-size:13.5px;margin-bottom:9px}
+.blk .h{font-size:11.5px;font-weight:800;letter-spacing:.06em;margin-bottom:3px;opacity:.9}
+.blk ul{margin:0;padding-left:16px;display:grid;gap:3px}
+.b-warn{background:var(--lemon-s);color:var(--lemon)}
+.b-tip{background:var(--olive-s);color:var(--olive)}
+.b-bring{background:var(--blue-s);color:var(--blue)}
+.b-note{background:var(--soft);color:var(--fg2)}
+.maps{display:flex;flex-wrap:wrap;gap:7px}
+.mp{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#fff;
+  background:var(--blue);border-radius:10px;padding:8px 13px;text-decoration:none}
+.foot{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--fg3)}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast" id="top">
+  <p class="k">2026 / 10 / 01 — 10 / 13</p>
+  <h1>意大利 13 天</h1>
+  <p class="s">那不勒斯落地 · 索伦托 · 阿玛菲海岸 · 卡普里 · 巴勒莫 · 切法卢 · 陶尔米纳 · 罗马</p>
+  <p class="who"><span class="a">SUNNY · 温哥华出发</span><span class="b">TIFFANY · 上海出发</span></p>
+</header>
+
+<nav class="jump" aria-label="跳转">
+  <ul>
+    <li><a href="#map">地图</a></li>
+    <li><a href="#flights-s">航班</a></li>
+    <li><a href="#hotels-s">住宿</a></li>
+    <li><a href="#books-s">预订</a></li>
+    <li><a href="#days-s">逐日行程</a></li>
+  </ul>
+</nav>
+
+<section id="map">
+  <div class="sh"><h2>路线地图</h2><span>四个落脚点</span></div>
+  <svg class="map" viewBox="0 0 1000 1159" role="img" aria-label="意大利南部与西西里的行程路线图" preserveAspectRatio="xMidYMid meet">
+<rect x="0" y="0" width="1000" height="1159" fill="var(--sea)"/>
+<path d="M253.9,-512.1L246.3,-513.9L241.4,-515.0L246.3,-506.7L238.7,-500.5L226.1,-511.4L222.3,-506.7L224.5,-506.7L219.0,-483.6L225.0,-460.2L225.0,-435.8L240.8,-379.6L289.4,-329.0L325.4,-310.9L371.7,-270.1L427.9,-237.6L426.8,-234.4L461.7,-142.7L485.2,-61.3L496.1,-40.8L527.7,-5.7L543.6,5.4L575.2,39.3L593.7,49.3L597.0,64.5L616.7,75.2L637.4,81.7L661.4,96.5L703.9,100.6L729.0,96.5L753.6,97.9L791.8,93.1L809.2,98.2L815.2,103.7L815.8,126.7L792.3,147.0L776.5,154.8L771.6,167.8L777.6,187.7L877.9,242.5L948.3,267.7L986.5,293.1L1022.5,323.9L1053.0,334.7L1067.2,345.5L1084.1,350.3L1085.8,355.0L1097.2,363.7L1096.7,372.8L1127.2,392.7L1157.2,430.3L1168.1,464.8L1150.7,499.9L1146.8,523.5L1101.6,500.9L1090.1,482.8L1094.5,479.2L1085.8,472.2L1092.8,464.5L1078.7,445.7L1077.6,433.0L1067.8,425.9L1014.3,422.6L969.6,400.1L977.2,392.7L973.9,389.3L987.6,387.6L988.1,384.6L946.7,380.2L925.9,395.0L903.0,430.0L891.0,454.4L879.6,466.8L882.3,492.5L862.1,521.9L863.8,533.5L868.1,539.8L865.9,544.8L882.3,557.5L913.9,567.1L916.1,571.7L958.1,599.9L963.6,600.2L958.1,632.0L960.8,644.9L958.1,662.0L963.6,671.9L970.7,674.2L965.8,678.8L965.8,687.4L955.4,699.6L949.9,695.0L942.8,698.2L929.8,691.7L874.7,721.6L868.7,738.3L875.2,776.3L873.0,793.3L834.3,820.0L810.8,852.3L797.2,886.4L787.9,889.0L737.2,879.9L732.8,868.2L736.1,865.3L731.2,852.9L734.5,842.2L732.3,831.1L739.9,824.6L760.1,814.5L775.4,773.7L772.7,761.9L763.4,748.1L788.5,733.4L810.8,732.1L820.7,716.0L819.0,692.7L809.2,684.8L800.5,665.0L792.8,612.5L787.4,594.0L765.0,559.5L758.5,543.5L753.0,516.9L753.6,504.9L731.2,468.1L714.3,470.1L698.5,484.5L688.1,482.5L676.1,476.2L678.8,474.2L651.0,449.1L641.8,448.7L622.7,435.7L632.5,413.5L636.3,410.2L603.6,350.3L577.9,355.0L567.6,361.4L537.0,370.1L534.3,363.1L557.7,341.8L551.7,333.4L526.7,316.1L516.8,320.2L512.5,323.9L496.7,322.2L496.1,327.0L491.2,324.9L491.7,309.4L479.7,285.0L472.1,277.5L462.3,254.4L440.5,232.7L418.7,236.4L420.3,242.2L376.7,224.5L350.5,233.7L343.9,239.5L309.6,200.0L295.4,198.9L279.0,191.8L275.7,191.8L249.6,156.9L214.7,129.1L204.3,101.3L169.4,74.1L154.7,72.4L130.1,24.8L112.1,10.6L61.4,-2.2L52.7,5.7L43.4,-6.0L55.4,-8.1L58.7,-24.8L42.3,-43.9L21.6,-70.7L-10.6,-83.2L-4.1,-104.5L-33.0,-115.4L-42.8,-108.4L-48.8,-121.7L-42.8,-128.6L-42.8,-179.1L-66.8,-220.3L-73.3,-226.3L-83.2,-300.3L-94.1,-323.3L-155.7,-349.3L-171.0,-362.5L-178.6,-363.9L-215.7,-390.0L-216.8,-394.6L-237.5,-407.5L-240.8,-397.1L-257.2,-411.8L-314.4,-422.2L-357.0,-392.5L-364.6,-371.1Z" fill="var(--land)" stroke="var(--coast)" stroke-width="2.4"/>
+<path d="M716.5,815.1L731.2,823.0L712.1,857.1L667.9,923.9L669.0,931.7L661.4,956.3L649.9,976.9L653.2,1003.3L674.5,1015.5L676.1,1020.0L669.6,1022.6L666.3,1021.3L664.1,1025.2L669.0,1034.8L683.2,1048.0L682.1,1052.5L678.8,1052.8L680.5,1056.6L686.5,1059.2L677.2,1069.4L660.3,1078.7L650.5,1102.4L656.5,1126.0L647.8,1128.9L618.3,1115.5L600.3,1120.0L557.2,1101.4L540.8,1069.4L516.3,1048.9L498.3,1042.2L468.8,1045.4L436.7,1028.4L419.7,1012.3L397.4,1004.6L375.6,989.5L359.7,971.7L334.7,967.9L329.2,958.2L300.3,955.0L281.7,956.9L267.0,939.1L246.8,910.0L251.7,906.8L252.8,889.6L258.3,871.4L256.7,869.2L269.2,859.7L274.1,861.4L291.6,849.3L297.0,838.6L307.4,860.1L318.3,868.2L343.4,849.7L341.7,846.1L352.1,836.6L368.5,837.9L383.2,835.0L389.7,840.2L392.5,853.6L411.0,852.3L415.4,855.2L417.6,864.0L456.3,877.6L487.9,864.0L534.8,870.1L550.1,864.0L562.1,864.9L590.5,850.0L597.6,842.5L628.1,838.6L654.8,846.4L667.4,838.3L672.8,829.2L684.8,832.7L716.5,815.1Z" fill="var(--land)" stroke="var(--coast)" stroke-width="2.4"/>
+<path d="M-152.4,372.8L-147.5,380.2L-159.0,408.5L-178.1,434.3L-162.3,469.8L-168.8,491.2L-173.7,568.7L-177.5,581.7L-174.8,585.0L-180.3,617.8L-176.4,621.8L-184.6,627.7L-188.4,652.5L-210.8,651.1L-239.7,635.3L-247.3,643.2L-265.3,635.6L-261.0,638.3L-269.2,663.0L-265.9,669.9L-273.5,683.1L-297.0,703.2L-302.4,698.2L-302.4,702.2L-315.5,693.0L-325.4,700.9L-328.1,704.8L-328.1,700.2L-333.5,698.2L-330.8,690.0L-336.3,687.4L-341.7,669.9L-347.2,666.6L-345.5,663.7L-352.1,662.0L-355.4,655.4L-358.1,654.8L-367.4,633.3L-358.6,620.8L-360.8,613.5L-366.8,603.9L-363.0,594.6L-364.6,585.7L-353.7,562.8L-353.2,531.9L-342.8,543.5L-338.4,542.5L-347.7,538.5L-341.7,507.5L-354.3,500.5L-360.8,504.9L-364.6,485.8L-362.4,479.2L-367.4,476.8L-349.9,462.8L-354.8,440.7L-352.1,425.6L-366.3,409.8L-371.2,383.6L-377.2,314.1L-345.5,318.8L-297.0,291.8L-291.0,279.6L-269.2,258.2L-249.0,250.4L-246.8,235.4L-232.1,236.4L-229.3,244.9L-222.3,246.3L-221.7,241.5L-206.4,260.9L-205.9,265.6L-199.9,254.8L-186.8,260.2L-191.2,265.6L-195.0,280.9L-192.3,280.9L-193.3,277.9L-188.4,279.2L-185.7,282.3L-172.1,283.6L-183.5,285.0L-188.4,297.9L-196.1,298.9L-162.8,315.1L-169.3,318.2L-168.3,322.2L-173.2,324.2L-159.5,350.9L-156.3,367.4L-152.4,372.8Z" fill="var(--land)" stroke="var(--coast)" stroke-width="2.4"/>
+<path d="M-54.3,-91.6L-59.7,-75.9L-62.4,-74.9L-55.9,-66.2L-64.1,-67.5L-71.7,-75.2L-73.9,-70.7L-75.0,-74.2L-81.0,-71.0L-84.3,-73.5L-86.4,-68.9L-105.0,-73.5L-104.4,-82.5L-71.7,-87.8L-63.5,-89.2L-55.9,-95.8L-54.3,-91.6Z" fill="var(--land)" stroke="var(--coast)" stroke-width="2.4"/>
+<path d="M388.1,851.2L488.3,865.8" stroke="var(--rt2)" stroke-width="3.4" stroke-dasharray="9 9" fill="none" stroke-linecap="round"/>
+<path d="M525.5,313.9Q528,339 541.8,359" stroke="var(--rt1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M541.8,359Q401,585 388.1,851.2" stroke="var(--rt1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M388.1,851.2Q556,887 720.3,836.1" stroke="var(--rt1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M720.3,836.1Q692,864 679.9,901.8" stroke="var(--rt1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M679.9,901.8Q656,931 648.9,967.8" stroke="var(--rt1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M648.9,967.8Q566,484 257,101.6" stroke="var(--rt1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+<circle cx="525.5" cy="313.9" r="7.5" fill="var(--land)" stroke="var(--rt2)" stroke-width="3.4"/>
+<circle cx="488.3" cy="865.8" r="7.5" fill="var(--land)" stroke="var(--rt2)" stroke-width="3.4"/>
+<circle cx="720.3" cy="836.1" r="7.5" fill="var(--land)" stroke="var(--rt2)" stroke-width="3.4"/>
+<circle cx="648.9" cy="967.8" r="7.5" fill="var(--land)" stroke="var(--rt2)" stroke-width="3.4"/>
+<circle cx="541.8" cy="359" r="20" fill="var(--rt1)"/>
+<text x="541.8" y="359" class="mnum" text-anchor="middle" dominant-baseline="central">1</text>
+<circle cx="388.1" cy="851.2" r="20" fill="var(--rt1)"/>
+<text x="388.1" y="851.2" class="mnum" text-anchor="middle" dominant-baseline="central">2</text>
+<circle cx="679.9" cy="901.8" r="20" fill="var(--rt1)"/>
+<text x="679.9" y="901.8" class="mnum" text-anchor="middle" dominant-baseline="central">3</text>
+<circle cx="257" cy="101.6" r="20" fill="var(--rt1)"/>
+<text x="257" y="101.6" class="mnum" text-anchor="middle" dominant-baseline="central">4</text>
+<text x="287" y="107.6" text-anchor="start" class="mlbl big">罗马</text>
+<text x="525.5" y="289.9" text-anchor="middle" class="mlbl">那不勒斯</text>
+<text x="513.8" y="375" text-anchor="end" class="mlbl big">索伦托</text>
+<text x="360.1" y="855.2" text-anchor="end" class="mlbl big">巴勒莫</text>
+<text x="492.3" y="845.8" text-anchor="middle" class="mlbl">切法卢</text>
+<text x="746.3" y="826.1" text-anchor="start" class="mlbl">墨西拿</text>
+<text x="711.9" y="913.8" text-anchor="start" class="mlbl big">陶尔米纳</text>
+<text x="664.9" y="1001.8" text-anchor="start" class="mlbl">卡塔尼亚</text>
+</svg>
+  <p class="legend">
+    <span><i></i>城市间大移动</span>
+    <span><i class="d"></i>当日往返</span>
+  </p>
+  <div class="basegrid"><div class="base"><b>1</b><div class="t">索伦托<em>10/01–10/05</em></div></div><div class="base"><b>2</b><div class="t">巴勒莫<em>10/05–10/07</em></div></div><div class="base"><b>3</b><div class="t">陶尔米纳<em>10/07–10/09</em></div></div><div class="base"><b>4</b><div class="t">罗马<em>10/09–10/13</em></div></div></div>
+
+  <div class="sh" style="margin-top:26px"><h2 style="font-size:17px">索伦托一带放大</h2><span>前 5 天</span></div>
+  <svg class="map" viewBox="0 0 1000 865" role="img" aria-label="索伦托与阿玛菲海岸放大图" preserveAspectRatio="xMidYMid meet">
+<rect x="0" y="0" width="1000" height="865" fill="var(--sea)"/>
+<path d="M-560.7,-4974.1L-532.6,-4916.2L-515.7,-4822.1L-493.2,-4789.6L-448.2,-4681.1L-425.7,-4605.3L-397.6,-4424.9L-273.8,-3978.5L-217.6,-3834.8L-183.8,-3766.6L-88.2,-3612.4L-82.6,-3580.2L-71.3,-3555.1L159.3,-3283.1L254.9,-3193.8L418.0,-3079.5L485.5,-2968.9L688.0,-2765.8L744.3,-2730.2L834.3,-2694.6L896.2,-2680.4L918.7,-2662.6L935.5,-2627.0L941.2,-2541.6L952.4,-2499.0L969.3,-2470.6L1031.2,-2449.2L1064.9,-2431.5L1115.5,-2385.3L1171.8,-2360.5L1301.2,-2335.6L1363.0,-2314.3L1447.4,-2225.6L1475.5,-2218.5L1537.4,-2168.9L1565.5,-2154.7L1633.0,-2140.5L1813.1,-2140.5L1998.7,-2098.0L2071.8,-2098.0L2330.6,-2140.5L2583.7,-2126.4L2977.4,-2176.0L3157.4,-2122.8L3191.2,-2066.1L3219.3,-2066.1L3213.7,-2034.2L3224.9,-1995.3L3241.8,-1889.1L3236.2,-1853.8L3224.9,-1829.0L3163.1,-1765.4L3106.8,-1740.6L2983.1,-1620.5L2819.9,-1539.4L2780.6,-1482.9L2769.3,-1405.3L2774.9,-1320.8L2797.4,-1250.3L2831.2,-1201.0L2876.2,-1162.3L2971.8,-1095.5L3073.1,-1063.8L3118.1,-1021.7L3410.6,-888.2L3658.1,-751.3L3753.7,-726.7L3804.3,-677.6L3866.2,-635.6L4237.5,-509.4L4265.6,-481.4L4276.8,-481.4L4276.8,-498.9L4288.1,-498.9L4321.8,-463.9L4591.8,-376.4L4816.8,-250.6L4873.1,1040.0L4833.7,1015.8L4811.2,988.1L4850.6,970.7L4878.7,943.0L4890.0,911.8L4856.2,877.2L4884.3,863.3L4884.3,818.2L4856.2,828.6L4828.1,849.4L4794.3,859.8L4783.1,852.9L4760.6,804.4L4743.7,797.4L4575.0,783.6L4462.5,839.0L4361.2,936.1L4158.7,1230.3L4124.9,1296.0L4091.2,1416.9L4079.9,1437.6L4057.4,1451.4L4001.2,1548.0L3911.2,1627.4L3883.1,1675.6L3871.8,1751.4L3871.8,1779.0L3894.3,1854.7L3922.4,1916.7L3911.2,1940.7L3883.1,1964.8L3860.6,2009.5L3787.4,2081.7L3731.2,2177.9L3703.1,2243.1L3703.1,2304.9L3719.9,2363.2L3764.9,2414.7L3764.9,2428.4L3742.4,2479.8L3793.1,2538.0L3860.6,2586.0L3911.2,2609.9L4108.1,2620.2L4158.7,2637.3L4215.0,2678.4L4237.5,2709.2L4243.1,2740.0L4260.0,2757.1L4355.6,2801.5L4428.7,2863.0L4456.8,2873.3L4490.6,2876.7L4518.7,2890.4L4591.8,2979.2L4636.8,3020.2L4693.1,3047.5L4749.3,3050.9L4693.1,3190.7L4676.2,3327.0L4681.8,3354.3L4721.2,3422.4L4726.8,3446.2L4721.2,3510.8L4693.1,3626.5L4693.1,3687.6L4738.1,3779.3L4749.3,3789.5L4800.0,3809.9L4822.5,3813.3L4777.5,3847.2L4771.8,3860.8L4766.2,3938.8L4771.8,3949.0L4715.6,3996.5L4698.7,4013.4L4665.0,4074.4L4648.1,4033.7L4608.7,4027.0L4563.7,4040.5L4535.6,4060.9L4496.2,4013.4L4468.1,3996.5L4434.3,3989.7L4400.6,3993.1L4248.7,4033.7L4074.3,4115.1L4012.4,4159.1L4001.2,4176.0L3894.3,4240.3L3832.4,4301.2L3815.6,4358.7L3781.8,4426.3L3770.6,4473.7L3793.1,4487.2L3793.1,4527.7L3809.9,4679.6L3838.1,4814.5L3838.1,4865.1L3826.8,5013.2L3815.6,5040.2L3753.7,5097.4L3731.2,5127.6L3714.3,5131.0L3669.3,5174.7L3618.7,5191.5L3466.8,5268.8L3416.2,5315.9L3202.4,5581.0L3174.3,5648.0L3134.9,5855.7L2381.2,5889.1L2369.9,5849.0L2369.9,5812.2L2403.7,5782.0L2347.4,5684.9L2353.1,5654.7L2375.6,5617.9L2386.8,5581.0L2386.8,5544.1L2369.9,5497.2L2364.3,5430.0L2392.4,5386.4L2443.1,5362.9L2606.2,5315.9L2623.1,5289.0L2651.2,5258.8L2673.7,5168.0L2786.2,4925.7L2808.7,4838.1L2808.7,4770.7L2780.6,4716.7L2735.6,4662.7L2701.8,4645.9L2679.3,4615.5L2684.9,4575.0L2696.2,4551.3L2724.3,4534.5L2786.2,4514.2L2887.4,4446.6L2943.7,4423.0L3011.2,4416.2L3123.7,4429.7L3151.8,4426.3L3219.3,4375.6L3253.1,4318.2L3275.6,4243.7L3281.2,4074.4L3275.6,4033.7L3258.7,4003.2L3236.2,3982.9L3202.4,3976.1L3179.9,3962.6L3157.4,3921.9L3067.4,3718.2L3005.6,3245.3L2932.4,2986.0L2870.6,2907.5L2831.2,2835.7L2746.8,2757.1L2729.9,2733.1L2684.9,2551.7L2634.3,2466.1L2600.6,2232.8L2589.3,2212.2L2578.1,2205.4L2594.9,2116.1L2583.7,2068.0L2533.1,1988.9L2510.6,1920.1L2488.1,1885.7L2437.4,1830.6L2392.4,1758.3L2358.7,1730.8L2353.1,1713.5L2353.1,1689.4L2330.6,1696.3L2212.4,1689.4L2178.7,1710.1L2150.6,1751.4L2094.3,1785.9L2043.7,1847.8L2015.6,1858.2L1936.8,1847.8L1908.7,1837.5L1863.7,1779.0L1846.8,1772.1L1835.6,1782.4L1801.8,1789.3L1784.9,1785.9L1784.9,1772.1L1813.1,1751.4L1784.9,1696.3L1739.9,1644.6L1672.4,1603.2L1571.2,1499.7L1548.7,1489.4L1475.5,1506.6L1447.4,1503.2L1430.5,1489.4L1408.0,1448.0L1379.9,1416.9L1334.9,1399.6L1306.8,1375.4L1278.7,1382.4L1233.7,1354.7L1228.0,1320.2L1267.4,1264.9L1278.7,1219.9L1267.4,1185.4L1267.4,1164.6L1318.0,1140.4L1334.9,1126.5L1368.7,1112.7L1374.3,1091.9L1374.3,1033.1L1334.9,963.8L1199.9,672.5L1160.5,603.1L1076.2,509.2L1036.8,474.5L986.2,460.6L935.5,481.4L890.5,516.2L873.7,523.2L789.3,516.2L772.4,523.2L704.9,582.2L665.5,589.2L620.5,578.7L575.5,551.0L547.4,568.3L474.3,585.7L440.5,613.5L367.4,651.7L350.5,679.5L328.0,651.7L322.4,606.5L339.3,568.3L373.0,551.0L418.0,544.0L434.9,526.6L446.2,502.3L508.0,439.7L558.7,422.3L564.3,387.5L553.0,352.8L530.5,321.4L502.4,300.5L468.7,307.5L429.3,286.6L412.4,262.3L384.3,248.3L299.9,147.3L271.8,126.4L243.7,122.9L159.3,140.3L142.4,164.7L131.2,203.0L97.4,203.0L69.3,175.2L24.3,168.2L-15.1,143.8L-37.6,136.8L-60.1,140.3L-65.7,161.2L-60.1,241.4L-71.3,234.4L-110.7,227.4L-122.0,213.5L-105.1,129.9L-116.3,53.2L-155.7,-44.5L-240.1,-198.1L-296.3,-236.6L-313.2,-254.1L-324.5,-341.5L-420.1,-512.9L-515.7,-632.1L-622.6,-730.2L-645.1,-737.2L-712.6,-726.7L-723.8,-744.3L-819.5,-730.2L-870.1,-698.7L-853.2,-639.1L-915.1,-639.1L-932.0,-653.1L-937.6,-674.1L-948.9,-681.1L-960.1,-667.1L-971.4,-667.1L-999.5,-702.2L-1241.4,-817.9L-1303.2,-821.5L-1432.6,-796.9L-1511.4,-747.8L-1573.2,-726.7L-1607.0,-677.6L-1640.7,-667.1L-1680.1,-677.6L-1691.4,-705.7L-1697.0,-740.8L-1758.9,-860.1L-1871.4,-993.5L-1916.4,-1035.7L-1995.1,-1074.4L-2141.4,-1084.9L-2253.9,-1158.8L-2293.2,-1172.9L-2310.1,-1158.8L-2321.4,-1134.2L-2343.9,-1158.8L-2462.0,-1338.4L-2613.9,-1518.2L-2799.5,-1687.6L-2844.5,-1698.2L-2867.0,-1719.4L-2940.1,-1737.1L-2962.6,-1768.9L-2973.9,-1804.2L-2990.7,-1928.0L-3007.6,-1970.5L-3080.7,-2090.9L-3249.5,-2218.5L-3266.4,-2236.3L-3272.0,-2261.1L-3283.2,-2278.8L-3322.6,-2282.4L-3384.5,-2339.2L-3440.8,-2371.1L-3581.4,-2364.0L-3609.5,-2431.5L-3637.6,-2470.6L-3654.5,-2484.8L-3671.4,-2516.8L-3705.1,-2559.4L-3722.0,-2648.3L-3806.4,-2822.8L-3845.8,-2879.8Z" fill="var(--land)" stroke="var(--coast)" stroke-width="3"/>
+<path d="M2201.2,5265.5L2246.2,5268.8L2336.2,5309.2L2392.4,5319.2L2381.2,5346.1L2353.1,5346.1L2285.6,5389.8L2263.1,5416.6L2251.8,5470.3L2274.3,5470.3L2201.2,5594.4L2156.2,5698.3L-2523.9,5872.4L-2523.9,5845.6L-2540.7,5822.2L-2495.7,5805.5L-2456.4,5758.6L-2411.4,5725.1L-2360.7,5741.8L-2315.7,5708.4L-2293.2,5684.9L-2287.6,5654.7L-2276.4,5634.6L-2208.9,5648.0L-2180.7,5617.9L-2186.4,5517.3L-2169.5,5483.7L-2158.2,5507.2L-2124.5,5507.2L-2079.5,5634.6L-2034.5,5711.7L-2017.6,5728.4L-1972.6,5748.5L-1955.7,5765.3L-1955.7,5782.0L-1905.1,5812.2L-1837.6,5802.1L-1708.2,5741.8L-1652.0,5701.7L-1640.7,5678.2L-1640.7,5641.3L-1646.4,5621.2L-1663.2,5604.5L-1663.2,5584.3L-1612.6,5537.4L-1618.2,5520.6L-1612.6,5503.9L-1573.2,5483.7L-1505.7,5510.6L-1472.0,5517.3L-1427.0,5517.3L-1387.6,5500.5L-1376.4,5456.9L-1353.9,5463.6L-1263.9,5430.0L-1247.0,5433.4L-1235.7,5470.3L-1179.5,5510.6L-1168.2,5524.0L-1168.2,5587.7L-1140.1,5661.4L-948.9,5648.0L-903.9,5678.2L-909.5,5715.0L-892.6,5755.2L-881.4,5768.6L-830.7,5788.7L-780.1,5835.6L-735.1,5865.7L-662.0,5879.1L-639.5,5889.1L-650.7,5905.9L-617.0,5902.5L-408.8,5872.4L-347.0,5859.0L-307.6,5822.2L-285.1,5808.8L-178.2,5792.1L-155.7,5768.6L-60.1,5818.9L1.8,5822.2L46.8,5808.8L238.0,5835.6L328.0,5832.2L412.4,5808.8L485.5,5768.6L536.2,5792.1L609.3,5778.7L806.2,5705.0L856.8,5668.1L901.8,5624.6L958.0,5554.2L974.9,5547.5L1059.3,5547.5L1177.4,5517.3L1228.0,5493.8L1273.0,5497.2L1289.9,5507.2L1329.3,5550.8L1346.2,5550.8L1385.5,5564.2L1453.0,5564.2L1481.2,5604.5L1514.9,5611.2L1649.9,5557.5L1694.9,5503.9L1751.2,5386.4L1745.6,5362.9L1751.2,5346.1L1745.6,5339.4L1756.8,5339.4L1762.4,5362.9L1751.2,5409.9L1756.8,5436.8L1779.3,5450.2L1829.9,5456.9L1874.9,5446.8L1998.7,5403.2L2054.9,5362.9L2111.2,5336.0L2178.7,5275.6L2201.2,5265.5Z" fill="var(--land)" stroke="var(--coast)" stroke-width="3"/>
+<path d="M399.5,564.3L592,310.2" stroke="var(--rt2)" stroke-width="4" stroke-dasharray="11 11" fill="none" stroke-linecap="round"/>
+<path d="M399.5,564.3L570.3,560.6" stroke="var(--rt2)" stroke-width="4" stroke-dasharray="11 11" fill="none" stroke-linecap="round"/>
+<path d="M570.3,560.6L754.2,548.5" stroke="var(--rt2)" stroke-width="4" stroke-dasharray="11 11" fill="none" stroke-linecap="round"/>
+<path d="M754.2,548.5L768.6,517.8" stroke="var(--rt2)" stroke-width="4" stroke-dasharray="11 11" fill="none" stroke-linecap="round"/>
+<path d="M399.5,564.3L191.6,714.6" stroke="var(--rt2)" stroke-width="4" stroke-dasharray="11 11" fill="none" stroke-linecap="round"/>
+<circle cx="231.4" cy="99.5" r="11" fill="var(--land)" stroke="var(--rt2)" stroke-width="5"/>
+<circle cx="592" cy="310.2" r="11" fill="var(--land)" stroke="var(--rt2)" stroke-width="5"/>
+<circle cx="570.3" cy="560.6" r="11" fill="var(--land)" stroke="var(--rt2)" stroke-width="5"/>
+<circle cx="754.2" cy="548.5" r="11" fill="var(--land)" stroke="var(--rt2)" stroke-width="5"/>
+<circle cx="768.6" cy="517.8" r="11" fill="var(--land)" stroke="var(--rt2)" stroke-width="5"/>
+<circle cx="191.6" cy="714.6" r="11" fill="var(--land)" stroke="var(--rt2)" stroke-width="5"/>
+<circle cx="399.5" cy="564.3" r="24" fill="var(--rt1)"/>
+<text x="399.5" y="564.3" class="mnum" text-anchor="middle" dominant-baseline="central">1</text>
+<text x="231.4" y="69.5" text-anchor="middle" class="mlbl">那不勒斯</text>
+<text x="626" y="318.2" text-anchor="start" class="mlbl">庞贝</text>
+<text x="365.5" y="574.3" text-anchor="end" class="mlbl big">索伦托</text>
+<text x="570.3" y="602.6" text-anchor="middle" class="mlbl">Positano</text>
+<text x="764.2" y="592.5" text-anchor="start" class="mlbl">Amalfi</text>
+<text x="796.6" y="501.79999999999995" text-anchor="start" class="mlbl">Ravello</text>
+<text x="191.6" y="758.6" text-anchor="middle" class="mlbl">卡普里</text>
+</svg>
+  <p class="legend"><span><i class="d"></i>从索伦托当天来回：庞贝、阿玛菲海岸、卡普里岛</span></p>
+</section>
+
+<section id="flights-s">
+  <div class="sh"><h2>航班</h2><span>去程 4 段 · 回程 2 段</span></div>
+  <div id="flights"></div>
+</section>
+
+<section id="hotels-s">
+  <div class="sh"><h2>住宿</h2><span>4 家</span></div>
+  <div id="hotels"></div>
+</section>
+
+<section id="books-s">
+  <div class="sh"><h2>预订信息</h2><span>展开看订单号</span></div>
+  <div id="books"></div>
+</section>
+
+<section id="days-s">
+  <div class="sh"><h2>逐日行程</h2><span>14 天</span></div>
+  <div id="days"></div>
+</section>
+
+<p class="foot">时间均为当地时间。跟团各段时长按凭证推算，以导游现场安排为准。地点旁的按钮会跳转 Google 地图。</p>
+
+</div>
+<script>
+const HOTELS = [
+  {c:'索伦托', n:'La Ferrovia Guest House', d:'10/01 – 10/05', tel:'+39 081 019 3560',
+   addr:'Piazza G.B. de Curtis 12, 80067 Sorrento',
+   q:'La Ferrovia Guest House Piazza Giovanni Battista de Curtis 12 Sorrento',
+   note:'离火车站和 Curreri 大巴站约 100 米。前台 08:00–19:00。'},
+  {c:'巴勒莫', n:'Suite Quaroni', d:'10/05 – 10/07', tel:'+39 327 667 2987',
+   addr:'Via Maqueda 290, 90134 Palermo', q:'Suite Quaroni Via Maqueda 290 Palermo',
+   note:'出发前用 WhatsApp 确认抵达时间并留记录。临街房间隔音一般。'},
+  {c:'陶尔米纳', n:'Splendid Hotel Taormina', d:'10/07 – 10/09', tel:'+39 0942 628010',
+   addr:'Via Dietro Cappuccini 10, 98030 Taormina ME',
+   q:'Splendid Hotel Taormina Via Dietro Cappuccini 10 Taormina',
+   note:'含早餐，有全景泳池。离 Via Pirandello 巴士总站步行 8 分钟。'},
+  {c:'罗马', n:'Decòncept House', d:'10/09 – 10/13', tel:'+39 376 018 9944',
+   addr:'Viale Giulio Cesare 15, 00192 Roma', q:'Deconcept House Viale Giulio Cesare 15 Roma',
+   note:'Prati 区，地铁 A 线 Ottaviano 站就在门口。含早餐。'}
+];
+
+const DAYS = [
+{ d:'2026-09-30', wd:'周三', city:'启程', sum:'两边同日出发，明早那不勒斯会合', wx:null, hotel:null,
+  items:[
+  {t:'09:10',e:'16:59',n:'AC304 温哥华 → 蒙特利尔',k:'fly',w:'sunny',b:1,
+   m:[['蒙特利尔 YUL','Montreal Trudeau International Airport']],
+   r:[['时间','09:10 YVR → 16:59 YUL'],['时长','约 4 小时 50 分']],
+   note:['落地已是东部时间 9/30 傍晚。']},
+  {t:'16:59',e:'19:35',n:'蒙特利尔中转 2 小时 36 分',k:'walk',w:'sunny',
+   m:[['YUL 航站楼','Montreal Trudeau International Airport']],
+   tip:['同为加航、同一航站楼，时间够用。这是离开加拿大前最后一次买东西和吃正餐的机会。']},
+  {t:'19:35',e:'09:40',n:'AC882 蒙特利尔 → 那不勒斯',k:'fly',w:'sunny',b:1,
+   m:[['那不勒斯机场','Naples International Airport Capodichino']],
+   r:[['时间','9/30 19:35 → 10/1 09:40'],['时长','约 8 小时 5 分（跨夜）'],['入境','申根入境章在那不勒斯盖']],
+   warn:['全程 15 小时 30 分。落地是当地早上，要在飞机上睡一觉——蒙特利尔起飞后尽早休息，当天下午还要逛索伦托，晚上 18:30 有 Lorelei 的位子。']},
+  {t:'20:50',e:'05:55',n:'AY088 上海浦东 T2 → 赫尔辛基',k:'fly',w:'tiffany',b:1,
+   m:[['浦东 T2','Shanghai Pudong International Airport Terminal 2'],['赫尔辛基万塔','Helsinki Vantaa Airport']],
+   r:[['时间','9/30 20:50 → 10/1 05:55'],['时长','14 小时 5 分'],['乘客','TENG/FEI'],['预订号','EF7DU8']]},
+  {t:'05:55',e:'07:20',n:'赫尔辛基中转 1 小时 25 分',k:'walk',w:'tiffany',warnFlag:1,
+   m:[['万塔机场','Helsinki Vantaa Airport']],
+   warn:['这段最紧。上海来的是非申根到达，接下来飞那不勒斯是申根航班，要在赫尔辛基过一次护照查验——Tiffany 的入境章盖在赫尔辛基，不是意大利。下飞机跟着 Schengen 标志直接过关，别慢慢走。'],
+   tip:['两程同一个预订号 EF7DU8，万一延误没赶上，芬航负责改签，不用重新买票。']},
+  {t:'07:20',e:'09:50',n:'AY1791 赫尔辛基 → 那不勒斯',k:'fly',w:'tiffany',b:1,
+   m:[['那不勒斯机场','Naples International Airport Capodichino']],
+   r:[['时间','07:20 → 09:50'],['时长','3 小时 30 分'],['预订号','EF7DU8']],
+   note:['申根内部航班，落地不用再过关，直接去行李转盘。']}
+  ]},
+
+{ d:'2026-10-01', wd:'周四', city:'索伦托', sum:'会合，下午逛老城', wx:'晴 23° / 21°', hotel:0,
+  items:[
+  {t:'09:40',n:'AC882 落地那不勒斯',k:'fly',w:'sunny',
+   m:[['NAP 到达厅','Naples International Airport Capodichino']],
+   note:['要过护照查验（申根入境章），再取行李。按 45 分钟预留，约 10:25 出到达厅。']},
+  {t:'09:50',n:'AY1791 落地那不勒斯',k:'fly',w:'tiffany',
+   m:[['NAP 到达厅','Naples International Airport Capodichino']],
+   note:['申根内部航班不用过关，直接取行李，大概 10:15–10:25 出来。']},
+  {t:'10:30',n:'两人会合 @ 到达厅',k:'walk',warnFlag:1,
+   m:[['NAP 到达厅','Naples International Airport Capodichino Arrivals']],
+   tip:['两班只差 10 分钟。Sunny 多一道入境查验、Tiffany 少一道，出来时间大概率差不多。约在到达厅出口或 Curreri 站台碰头。'],
+   warn:['先在机场买当地上网卡或开好漫游，互相能联系上再分头走。落地第一件事是给对方发消息报位置。']},
+  {t:'11:00',e:'12:30',n:'Curreri 大巴 → 索伦托',k:'bus',
+   m:[['Curreri 站台','Curreri Viaggi Naples Airport'],['索伦托火车站','Sorrento railway station']],
+   r:[['票价','€10 / 人'],['时长','75–90 分钟'],['买票','车上买，不用预订']],
+   note:['出到达厅跟着 Bus Turistici 标识走，过了出租车候车区右转就是站台。旺季班次：09:00 / 11:00 / 12:00 / 13:00 / 14:30 / 16:30 / 18:00 / 19:30，错过 11:00 还有 12:00 兜底。'],
+   tip:['备选：官方出租车固定价 €100–120，约 55–70 分钟。']},
+  {t:'12:40',n:'入住 La Ferrovia Guest House',k:'stay',b:1,
+   m:[['酒店','La Ferrovia Guest House Piazza Giovanni Battista de Curtis 12 Sorrento']],
+   r:[['房型','Superior Double · 1 Double Bed'],['地址','Piazza G.B. de Curtis 12, Sorrento'],['电话','+39 081 019 3560'],['住','10/01 – 10/05（4 晚）']],
+   tip:['不用打车。酒店离火车站约 100 米，大巴终点就在旁边，下车走两步就到。'],
+   note:['前台服务时间 08:00–19:00。房间有免费迷你吧和咖啡。']},
+  {t:'14:00',e:'16:00',n:'Corso Italia 主街 + 主教座堂',k:'see',
+   m:[['Corso Italia','Corso Italia Sorrento'],['主教座堂','Cattedrale di Sorrento']],
+   note:['离酒店步行 5 分钟。顺便认认晚上去 Lorelei 的路。']},
+  {t:'16:00',e:'17:00',n:'Villa Comunale 观景台',k:'see',
+   m:[['Villa Comunale','Villa Comunale Sorrento']],
+   note:['俯瞰那不勒斯湾和维苏威火山的最佳位置，这个点光线最好。']},
+  {t:'18:30',e:'21:30',n:'晚餐 · Ristorante Lorelei',k:'eat',b:1,
+   m:[['Lorelei','Ristorante Lorelei Via Aniello Califano 4 Sorrento']],
+   r:[['预订','TheFork · 2 人'],['时间','Thu Oct 1 · 6:30 PM'],['地址','Via Aniello Califano 4, Sorrento'],['电话','+39 081 1902 2620']],
+   bring:['披肩（露台晚上 16–17°）','穿得稍微正式一点'],
+   warn:['预订时间前 24 小时内取消，餐厅有权扣款。'],
+   note:['米其林星级，走品鉴菜单，留 2.5–3 小时。海景露台，18:30 正好赶上日落（约 18:50）。酒店步行 12–15 分钟。']}
+  ]},
+
+{ d:'2026-10-02', wd:'周五', city:'庞贝 + 那不勒斯', sum:'八小时走路日', wx:'阴 23° / 21°', hotel:0,
+  items:[
+  {t:'08:00',e:'08:30',n:'火车 索伦托 → 庞贝',k:'train',
+   m:[['索伦托车站','Sorrento Circumvesuviana Station'],['Pompei Scavi 站','Pompei Scavi Villa dei Misteri station']],
+   r:[['线路','Circumvesuviana'],['时长','25–30 分钟'],['买票','当天买，或用 GoEav App']],
+   warn:['下车站是 Pompei Scavi – Villa dei Misteri，不是 Pompei 站。']},
+  {t:'08:45',e:'12:00',n:'庞贝古城',k:'see',
+   m:[['Pompeii 考古公园','Pompeii Archaeological Park']],
+   bring:['帽子、墨镜、水（遗址几乎没有遮阴）','好走的鞋（大块碎石路）'],
+   note:['至少留 3 小时，建议请讲解或租语音导览。重点：角斗士训练场、大剧院、石膏遗体展示区。']},
+  {t:'12:15',e:'12:45',n:'火车 庞贝 → 那不勒斯',k:'train',
+   m:[['Napoli Porta Nolana','Napoli Porta Nolana station']],
+   note:['约 30 分钟，同一条线继续坐。']},
+  {t:'13:00',n:'正宗那不勒斯披萨',k:'eat',
+   m:[['da Michele','L Antica Pizzeria da Michele Naples'],['Sorbillo','Gino Sorbillo Naples']],
+   note:['两家都要做好排队的心理准备。']},
+  {t:'14:15',e:'16:45',n:'Spaccanapoli 老城 + 蛋堡',k:'see',
+   m:[['Spaccanapoli','Spaccanapoli Naples'],['主教座堂','Duomo di Napoli'],['蛋堡','Castel dell Ovo Naples']],
+   warn:['老城人多，用贴身小包。'],
+   note:['Spaccanapoli 是穿过老城的一条笔直窄街。蛋堡在海边，黄昏景色好。']},
+  {t:'17:00',e:'18:30',n:'返回索伦托（17:30 前上车）',k:'train',
+   m:[['Napoli Porta Nolana','Napoli Porta Nolana station']],
+   warn:['全程约 70 分钟。注意末班车时间，白天先查好。']},
+  {t:'19:00',n:'Marina Grande 海鲜晚餐',k:'eat',
+   m:[['Marina Grande','Marina Grande Sorrento']],
+   note:['不用订。从市中心走下去约 15 分钟，回来是上坡，也可以打车。']}
+  ]},
+
+{ d:'2026-10-03', wd:'周六', city:'阿玛菲海岸', sum:'跟团一日游 · 全程最重要的拍照日', wx:'晴 23° / 21°', hotel:0,
+  items:[
+  {t:'08:15',n:'集合 @ Piazza Tasso',k:'meet',b:1,warnFlag:1,
+   m:[['集合点 IAMME IA!','IAMME IA Gray Line Amalfi Coast Piazza Torquato Tasso 16 Sorrento']],
+   r:[['集合','08:15（提前 15 分钟）'],['出发','08:30'],['地点','IAMME IA! – Gray Line Amalfi Coast'],['地址','Piazza Torquato Tasso 16, Sorrento'],['订单号','Klook EEN466644'],['凭证','26/030395/001 · /002'],['电话','+39 081 877 0681'],['邮箱','info@iammeia.com']],
+   bring:['电子凭证截图（山路信号差）','水壶、手持小风扇','防晒、帽子','现金（海岸游船要现场付）','包里塞一条红裙给 Ravello 换'],
+   warn:['迟到或未到不退款。免费取消截止 10/02 08:30。'],
+   tip:['办公室 07:00 开门。从酒店步行 6–8 分钟，08:00 出门足够。']},
+  {t:'08:30',e:'09:20',n:'大巴前往 Positano',k:'bus',
+   m:[['Positano','Positano']],
+   tip:['路上会在 La Pinetina 观景点停车，俯瞰整个 Positano，相机准备好。'],
+   note:['以下各段时间按凭证时长推算，实际以导游为准。']},
+  {t:'09:20',e:'10:40',n:'Positano（约 1 小时 20 分）',k:'see',
+   m:[['主街 Via C. Colombo','Via Cristoforo Colombo Positano'],['陶瓷店 87 号','Via Cristoforo Colombo 87 Positano'],['Spiaggia Grande','Spiaggia Grande Positano']],
+   warn:['只有 80 分钟。想去网红陶瓷店（Via Cristoforo Colombo 87）要抓紧——消费任意一件商品即可进陶瓷园拍照，否则门票 €10/人。买的陶瓷让店家包结实，后面还要颠 10 天。'],
+   note:['彩色悬崖民居、绿色圆顶教堂。凭证提醒：穿舒适的鞋，通往市中心的街道台阶不少。拍照穿白/奶油长裙最跳。']},
+  {t:'10:40',e:'11:15',n:'渡轮 Positano → 阿马尔菲',k:'boat',
+   m:[['Positano 码头','Positano ferry terminal']],
+   note:['约 30 分钟。甲板风大，长裙压好，帽子拿手上。']},
+  {t:'11:15',e:'13:15',n:'阿马尔菲（含午餐）',k:'see',
+   m:[['Amalfi 主教座堂','Duomo di Amalfi']],
+   note:['主教座堂一定要进去看，台阶很出片（入场费自付）。午餐自费。当地特产 Santa Rosa 酥皮甜点（奶油 + 酸樱桃馅）值得一试。']},
+  {t:'13:15',e:'14:00',n:'海岸第二段（约 45 分钟）',k:'see',
+   m:[['Amalfi 港','Amalfi Porto Piazza Flavio Gioia']],
+   bring:['现金'],
+   warn:['可选的风景海岸游船体验要抵达时现场付现金。']},
+  {t:'14:00',e:'14:40',n:'大巴前往 Ravello',k:'bus',
+   m:[['Ravello','Ravello']],
+   note:['山路盘旋，晕车的话提前吃药。']},
+  {t:'14:40',e:'16:00',n:'Ravello 无限露台',k:'see',
+   m:[['Villa Cimbrone','Villa Cimbrone Ravello'],['Villa Rufolo','Villa Rufolo Ravello']],
+   warn:['80 分钟不够两个别墅都细看。优先 Villa Cimbrone 的 Terrazza dell\'Infinito（从广场步行 10–15 分钟）。两个别墅门票都不含团费，现场自付。悬崖边风大，注意安全。'],
+   note:['背景是纯蓝海天，正红或宝蓝长裙撞色最出片——白裙在这里换红裙。']},
+  {t:'16:00',e:'18:00',n:'返程回 Piazza Tasso',k:'bus',
+   m:[['Piazza Tasso','Piazza Torquato Tasso Sorrento']],
+   note:['凭证上可选返程 18:00 / 18:30。下车就在市中心，晚饭在附近解决很方便。']}
+  ]},
+
+{ d:'2026-10-04', wd:'周日', city:'卡普里 + 蓝洞', sum:'跟团 · 大量步行和爬梯', wx:'阴 23° / 21°', hotel:0,
+  items:[
+  {t:'07:15',n:'集合 @ 索伦托港 Molo \'52',k:'meet',b:1,warnFlag:1,
+   m:[['集合点 Molo 52','IAMME IA Lounge Molo 52 Piazza Marinai d Italia 33 Sorrento']],
+   r:[['集合','07:15（提前 15 分钟）'],['出发','07:30'],['地点','IAMME IA! Lounge by Restaurant Molo \'52'],['地址','Piazza Marinai d\'Italia 33, Sorrento'],['订单号','Klook GZM970583'],['凭证','26/030963/001 · /002'],['电话','+39 081 877 0681']],
+   bring:['电子凭证','泳衣（穿在里面）','防晒（海面反光强）','有下颌绳的草帽','现金（缆车、花园都自费）'],
+   warn:['迟到或未到不退款。免费取消截止 10/03 07:30。酒店前台 8 点才上班，今天要用的东西前一晚就备好。'],
+   tip:['早上 7 点前别赌时间，直接打车下港口（酒店到 Marina Piccola 约 1 公里下坡）。']},
+  {t:'08:00',e:'08:30',n:'渡轮 索伦托 → 卡普里',k:'boat',
+   m:[['Marina Piccola 港','Marina Piccola Sorrento port']]},
+  {t:'08:30',e:'09:45',n:'蓝洞 Grotta Azzurra',k:'see',
+   m:[['蓝洞','Grotta Azzurra Capri']],
+   tip:['蓝洞门票已包含在团费里，不用像散客那样现场另付 €18。'],
+   warn:['进蓝洞要躺平在小划艇里钻洞口，别穿裙子。蓝洞受潮汐和风浪影响随时可能关闭；如遇极端天气供应商取消活动，可要求全额退款。前一晚看一下海况。']},
+  {t:'10:15',e:'11:45',n:'Anacapri 阿纳卡普里',k:'see',
+   m:[['Anacapri','Anacapri'],['Monte Solaro 缆车','Monte Solaro Anacapri'],['圣米歇尔别墅','Villa San Michele Anacapri']],
+   warn:['Monte Solaro 缆车和圣米歇尔别墅都不含团费，要在下午自由活动时间自己去并现场付费。']},
+  {t:'12:15',e:'13:45',n:'Capri 卡普里小镇',k:'see',
+   m:[['Piazzetta','Piazzetta Capri'],['Via Camerelle','Via Camerelle Capri'],['奥古斯都花园','Giardini di Augusto Capri']],
+   warn:['奥古斯都花园（俯瞰 Faraglioni 海蚀岩）也不含团费，需自费。']},
+  {t:'13:45',e:'15:45',n:'自由活动 + 午餐',k:'eat',
+   m:[['Capri Marina Grande','Capri Marina Grande']],
+   warn:['这两小时是补自费项目的唯一窗口——缆车、奥古斯都花园、乘船游览。别拿去慢慢吃午饭。'],
+   note:['想下海的话海水还有 23–24°。']},
+  {t:'15:45',e:'16:30',n:'渡轮返回 · 行程结束',k:'boat',
+   m:[['Via Marina Piccola 35','Via Marina Piccola 35 Sorrento']],
+   note:['往返酒店接送不含团费，从港口回酒店要自己走上坡或打车。']}
+  ]},
+
+{ d:'2026-10-05', wd:'周一', city:'飞巴勒莫', sum:'索伦托 → 西西里', wx:'索伦托 22° · 巴勒莫 24°/16°', hotel:1,
+  items:[
+  {t:'08:00',e:'10:00',n:'索伦托最后的早晨',k:'see',
+   m:[['Piazza Tasso','Piazza Torquato Tasso Sorrento']],
+   note:['航班 15:55 起飞，上午还有时间，但别走远。行李先收好。']},
+  {t:'10:00',n:'退房 + 前往 Curreri 大巴站',k:'walk',
+   m:[['Curreri Sorrento 站','Curreri Viaggi Sorrento']],
+   tip:['大巴站就在酒店旁边（火车站前），走过去 100 米，不用留出行程时间。'],
+   warn:['反向班次和去程不对称，前一天先上 curreriviaggi.it 确认 11 点前后的实际班次。']},
+  {t:'11:00',e:'12:30',n:'Curreri 大巴 → NAP 机场',k:'bus',
+   m:[['NAP 机场','Naples International Airport Capodichino']],
+   note:['约 75–90 分钟，€10/人。备选：打车固定价 €100–120。']},
+  {t:'12:40',e:'15:55',n:'NAP 值机 + 安检',k:'walk',warnFlag:1,
+   m:[['NAP 出发厅','Naples International Airport Capodichino Departures']],
+   warn:['瑞安建议提前 2.5–3 小时到机场，尤其要托运行李。行李规定很严，随身尺寸提前量好，超尺寸在登机口补款很贵。'],
+   note:['无餐食，过安检后买点吃的。']},
+  {t:'15:55',e:'16:55',n:'FR048 那不勒斯 → 巴勒莫',k:'fly',b:1,
+   m:[['巴勒莫机场 PMO','Palermo Falcone Borsellino Airport']],
+   r:[['航班','瑞安 FR048 · Malta Air 执飞'],['时间','15:55 NAP → 16:55 PMO'],['舱位','经济舱 · 无餐食'],['订单号','携程 1128148413367246'],['乘客','HUAN/YU XIN · TENG/FEI']]},
+  {t:'17:30',e:'18:40',n:'机场大巴 → 巴勒莫市区',k:'bus',
+   m:[['Politeama 广场','Piazza Politeama Palermo'],['Palermo Centrale','Palermo Centrale railway station']],
+   r:[['班车','Prestia e Comandè'],['时长','50–60 分钟'],['票价','€6.5 左右'],['班次','5:00–次日 0:30 每 30 分钟']],
+   tip:['在 Politeama 剧院广场下车，离酒店步行约 10 分钟；坐到终点 Palermo Centrale 反而要走 15 分钟。'],
+   note:['备选：Trinacria Express 火车（机场地下就是车站，跟着 Treni 标志走，€6–7）；出租车 30–45 分钟，固定价 €40–45 白天 / €55 夜间，上车前确认。']},
+  {t:'19:00',n:'入住 Suite Quaroni',k:'stay',b:1,
+   m:[['Suite Quaroni','Suite Quaroni Via Maqueda 290 Palermo']],
+   r:[['房型','Double Room Tower · 1 Queen Bed'],['地址','Via Maqueda 290, Palermo'],['电话','+39 327 667 2987'],['住','10/05 – 10/07（2 晚）']],
+   warn:['有住客反映前台英语沟通困难、需要提前告知入住时间。19:00 算比较晚的 check-in，出发前用 WhatsApp 确认抵达时间并留下聊天记录。临街房间隔音一般，怕吵可以到店问能不能换内侧。']},
+  {t:'19:30',n:'市中心晚餐 + 夜逛',k:'eat',
+   m:[['Quattro Canti','Quattro Canti Palermo'],['Teatro Massimo','Teatro Massimo Palermo']],
+   note:['出门就是 Via Maqueda 步行街，餐厅一条街。街头小吃试试 panelle 和 arancine。']}
+  ]},
+
+{ d:'2026-10-06', wd:'周二', city:'切法卢', sum:'海边小镇 + 爬山看日落', wx:'局部有雨 25° / 17°', hotel:1,
+  items:[
+  {t:'08:30',e:'09:30',n:'火车 巴勒莫 → 切法卢',k:'train',
+   m:[['Palermo Centrale','Palermo Centrale railway station'],['Cefalù 车站','Cefalu railway station']],
+   r:[['线路','Trenitalia 地区火车'],['时长','50–60 分钟'],['买票','当天买即可，票价固定'],['班次','约每小时一班']],
+   note:['从酒店 Via Maqueda 290 走到车站约 15 分钟，沿 Via Maqueda 往南。']},
+  {t:'09:45',e:'12:00',n:'主教座堂 + 中世纪洗衣房',k:'see',
+   m:[['Duomo di Cefalù','Duomo di Cefalu'],['中世纪洗衣房','Lavatoio Medievale Cefalu']],
+   note:['诺曼式建筑代表作。砂岩色建筑配墨绿或酒红这类宝石色最好看。']},
+  {t:'12:00',e:'13:30',n:'老城午餐',k:'eat',m:[['Cefalù 老城','Cefalu old town']]},
+  {t:'13:30',e:'16:00',n:'老城沙滩 / 自由活动',k:'see',
+   m:[['Spiaggia di Cefalù','Spiaggia di Cefalu']],
+   note:['回酒店或找地方换成运动装，准备爬山。']},
+  {t:'16:00',e:'18:30',n:'La Rocca 古堡遗址 + 日落',k:'see',
+   m:[['La Rocca','La Rocca di Cefalu']],
+   bring:['运动鞋','水','外套（山上风凉）','手机电量（下山天已黑）','伞'],
+   warn:['全程爬坡约 45 分钟，天黑前要下山。今天有雨，湿石头下山很滑，出门前看一眼天气。'],
+   note:['爬上去俯瞰整个小镇和海湾，日落约 18:50。']},
+  {t:'19:15',e:'20:15',n:'火车返回巴勒莫',k:'train',
+   m:[['Cefalù 车站','Cefalu railway station']],
+   note:['班次密集，但建议白天先查好末班车。']}
+  ]},
+
+{ d:'2026-10-07', wd:'周三', city:'火车去陶尔米纳', sum:'4 小时 47 分 · 1 次中转', wx:'局部有雨 22° / 16°', hotel:2,
+  items:[
+  {t:'07:40',n:'到达 Palermo Centrale',k:'train',warnFlag:1,
+   m:[['Palermo Centrale','Palermo Centrale railway station']],
+   bring:['带二维码那一页车票（提前下载）'],
+   warn:['你截图那张印着 NOT VALID FOR TRAVEL 的是订单明细页（Page 1 of 2），不是乘车凭证。真正能扫的二维码在另一页，出发前确认手机里存的是对的那张，山区可能没信号。'],
+   note:['提前 30–40 分钟到站。从酒店步行约 15 分钟，拖箱子建议留 20 分钟或直接打车。今天上午巴勒莫不要安排其他活动。']},
+  {t:'08:22',e:'11:16',n:'5354 巴勒莫 → 墨西拿',k:'train',b:1,
+   m:[['Messina Centrale','Messina Centrale railway station']],
+   r:[['车次','Regionale Veloce 5354'],['座位','二等座 · 280 公里'],['票号','2920557509'],['乘客','YUXIN HUAN'],['票价','票面 €18.20 · 订单 €36.1'],['经停','Palermo → Fiumetorto → Messina → Taormina-Giardini']]},
+  {t:'11:16',e:'11:55',n:'墨西拿换乘（39 分钟）',k:'train',
+   m:[['Messina Centrale','Messina Centrale railway station']],
+   warn:['时间不算宽裕但够用。下车后先看屏幕确认 12969 的站台。']},
+  {t:'11:55',e:'13:09',n:'12969 墨西拿 → 陶尔米纳',k:'train',b:1,
+   m:[['Taormina-Giardini 站','Taormina Giardini Naxos railway station']],
+   r:[['时长','约 1 小时 14 分'],['全程','含 1 次中转共 4 小时 47 分']]},
+  {t:'13:09',e:'13:45',n:'上山进古城',k:'bus',warnFlag:1,
+   m:[['Taormina-Giardini 站','Taormina Giardini Naxos railway station'],['Taormina 古城','Taormina']],
+   warn:['到达的是山下海边的 Taormina-Giardini 站，不是 Taormina 古城本身。出站后转 Interbus 上山（10–15 分钟）或打车。']},
+  {t:'14:00',n:'入住 Splendid Hotel Taormina',k:'stay',b:1,
+   m:[['Splendid Hotel','Splendid Hotel Taormina Via Dietro Cappuccini 10 Taormina']],
+   r:[['房型','Standard Double · 1 Double Bed'],['地址','Via Dietro Cappuccini 10, Taormina'],['电话','+39 0942 628010'],['住','10/07 – 10/09（2 晚）']],
+   tip:['在古城里，步行可达 Corso Umberto。有俯瞰全城的全景泳池，明天走不动了可以留在酒店。含早餐。离 Via Pirandello 巴士总站步行 8 分钟——后天去机场很方便。'],
+   warn:['免费取消截止 10/02。有住客说标准房实际比照片小，介意的话到店问问能不能升级。']},
+  {t:'16:00',e:'18:00',n:'Corso Umberto 老城闲逛',k:'see',
+   m:[['Corso Umberto','Corso Umberto Taormina']]}
+  ]},
+
+{ d:'2026-10-08', wd:'周四', city:'陶尔米纳', sum:'古希腊剧场 + 海边小岛', wx:'局部有雨 22° / 16°', hotel:2,
+  items:[
+  {t:'09:00',e:'11:00',n:'Teatro Antico 古希腊剧场',k:'see',
+   m:[['Teatro Antico','Teatro Antico di Taormina']],
+   tip:['早上人最少、光最好，这是今天最该早起的一件事。'],
+   note:['背景就是埃特纳火山和海湾，全西西里最美剧场之一。大地色长裙或纯白最搭。']},
+  {t:'11:00',e:'13:00',n:'主街 + Piazza IX Aprile 观景台',k:'see',
+   m:[['Corso Umberto','Corso Umberto Taormina'],['Piazza IX Aprile','Piazza IX Aprile Taormina']]},
+  {t:'13:00',e:'14:30',n:'午餐',k:'eat',m:[['Corso Umberto','Corso Umberto Taormina']]},
+  {t:'14:30',e:'17:00',n:'Isola Bella 小岛沙滩',k:'see',
+   m:[['Isola Bella','Isola Bella Taormina'],['缆车 Funivia','Funivia Taormina Mazzaro']],
+   bring:['泳衣 + 罩衫','凉鞋（鹅卵石滩，比人字拖稳）','伞'],
+   note:['可以坐缆车下山，省下一段陡坡。']},
+  {t:'17:30',e:'19:30',n:'Castelmola 山顶小镇',k:'see',
+   m:[['Castelmola','Castelmola']],
+   bring:['外套（傍晚山上凉）'],
+   note:['体力允许再去。打车或巴士半小时，视野比 Taormina 本身更高更美。当地杏仁酒 Vino alla Mandorla 值得一试——液体，只能走托运。或者留在酒店泡全景泳池。']}
+  ]},
+
+{ d:'2026-10-09', wd:'周五', city:'飞罗马', sum:'西西里 → 罗马', wx:'西西里 23° · 罗马 28°/16°', hotel:3,
+  items:[
+  {t:'08:30',e:'10:30',n:'陶尔米纳最后的早晨',k:'see',
+   m:[['Corso Umberto','Corso Umberto Taormina']],
+   note:['航班 15:40 起飞。上午可以再喝杯咖啡、买点杏仁糖，行李先收好。']},
+  {t:'10:30',n:'退房 + 前往 Via Pirandello 巴士总站',k:'walk',
+   m:[['Via Pirandello 总站','Taormina bus terminal Via Pirandello']],
+   warn:['Interbus 班次不算密集（早班 6:15，晚班约 19:15–20:45），前一天一定先查好当天时刻表。'],
+   note:['从酒店步行约 8 分钟，拖箱子留 10–15 分钟。']},
+  {t:'11:00',e:'12:30',n:'Interbus 大巴 → 卡塔尼亚机场',k:'bus',
+   m:[['卡塔尼亚机场 CTA','Catania Fontanarossa Airport']],
+   r:[['时长','70–90 分钟'],['票价','€7–8'],['买票','车上或司机处']],
+   note:['托运行李放车侧行李舱。备选：出租车 50–60 分钟，固定价 €90–115，行李多建议提前订。']},
+  {t:'12:40',e:'15:40',n:'CTA 值机 + 安检',k:'walk',
+   m:[['CTA 出发厅','Catania Fontanarossa Airport Departures']],
+   note:['瑞安建议提前 2.5–3 小时。无餐食，过安检后买点吃的。随身行李尺寸提前量好。']},
+  {t:'15:40',e:'17:10',n:'FR4871 卡塔尼亚 → 罗马',k:'fly',b:1,
+   m:[['罗马 FCO T1','Rome Fiumicino Airport Terminal 1']],
+   r:[['航班','瑞安 FR4871 · Malta Air 执飞'],['时间','15:40 CTA → 17:10 FCO T1'],['时长','1 小时 30 分'],['订单号','携程 1128148413367246']]},
+  {t:'17:45',e:'19:00',n:'FCO → 罗马市区',k:'bus',
+   m:[['Decòncept House','Deconcept House Viale Giulio Cesare 15 Roma'],['Roma Termini','Roma Termini railway station']],
+   tip:['晚上七点多到，建议直接打车（市中心官方固定价 €50，直接到酒店门口），别拖着行李折腾换乘。'],
+   note:['备选：Leonardo Express 直达火车到 Roma Termini，约 32 分钟 €14，但到 Termini 后还要换地铁或打车。']},
+  {t:'19:00',n:'入住 Decòncept House',k:'stay',b:1,
+   m:[['Decòncept House','Deconcept House Viale Giulio Cesare 15 Roma']],
+   r:[['房型','Executive Room, City View · 1 Queen Bed'],['地址','Viale Giulio Cesare 15, Roma'],['电话','+39 376 018 9944'],['住','10/09 – 10/13（4 晚）']],
+   tip:['Prati 区，地铁 A 线 Ottaviano 站就在门口——走去梵蒂冈 15 分钟，去市中心坐 A 线很快。评分 5.0，含早餐。']},
+  {t:'19:30',n:'酒店附近晚餐',k:'eat',m:[['Borgo Pio','Borgo Pio Rome']],
+   note:['Borgo Pio 一带步行可达，不用跑远。']}
+  ]},
+
+{ d:'2026-10-10', wd:'周六', city:'梵蒂冈', sum:'着装有硬性要求', wx:'晴 27° / 15°', hotel:3,
+  items:[
+  {t:'09:00',e:'10:10',n:'早餐 + 步行前往博物馆入口',k:'walk',
+   m:[['博物馆入口','Musei Vaticani Entrance Viale Vaticano Roma'],['Ottaviano 地铁站','Ottaviano metro station Rome']],
+   warn:['入口在 Viale Vaticano，不是圣彼得广场那一侧。从酒店步行约 15–18 分钟，或地铁 A 线 Ottaviano 坐一站到 Cipro。']},
+  {t:'10:10',e:'10:30',n:'梵蒂冈博物馆入场',k:'see',b:1,warnFlag:1,
+   m:[['Vatican Museums','Vatican Museums']],
+   r:[['票上时间','10:30（提前 20 分钟到）'],['Codice','2L2NFHKA19XTF1VGK'],['Visita','10733/2026-60'],['人数','Pax 1–2'],['入口','CORRIDOIO1 \\ PASSAGEWAY1']],
+   bring:['纸质票备份','遮肩披肩','轻便包（馆内闷热，外套要能随时脱）'],
+   warn:['两步流程：① 先把票给博物馆外面的 Customer Care 工作人员看 ② 再到一楼（first floor）闸机验票。着装必须遮肩遮膝，工作人员有权拒绝入场。']},
+  {t:'10:30',e:'13:30',n:'博物馆 + 西斯廷教堂',k:'see',
+   m:[['Vatican Museums','Vatican Museums'],['西斯廷教堂','Sistine Chapel Vatican']],
+   note:['西斯廷教堂在参观动线的最后，留足 3 小时。教堂内禁止拍照和说话。当天 27°，料子要轻——薄亚麻长裤配透气长袖，或有袖的薄棉中长裙。']},
+  {t:'13:30',e:'14:30',n:'午餐 @ Borgo Pio',k:'eat',m:[['Borgo Pio','Borgo Pio Rome']],
+   note:['比梵蒂冈正门口的店实在一些。']},
+  {t:'14:30',e:'16:00',n:'圣彼得大教堂',k:'see',
+   m:[['St. Peter\'s Basilica','St Peters Basilica Vatican City']],
+   note:['参观免费，但安检排队久。着装要求同上。体力好可以爬穹顶（另收费）。']},
+  {t:'16:15',e:'17:30',n:'圣天使堡',k:'see',
+   m:[['Castel Sant\'Angelo','Castel Sant Angelo Rome'],['圣天使桥','Ponte Sant Angelo Rome']],
+   warn:['17:45 要出发去 Monti 吃晚餐，别逛超时。'],
+   note:['登顶看罗马全景。圣天使桥是拍照点。']},
+  {t:'17:45',e:'18:15',n:'前往 Monti 区',k:'bus',
+   m:[['Cavour 地铁站','Cavour metro station Rome']],
+   note:['约 4 公里。打车 20–25 分钟（周六傍晚会堵），或地铁 A 线 Ottaviano → Termini 换 B 线 → Cavour 站，出站步行 5 分钟。留足 30–40 分钟。']},
+  {t:'18:30',e:'21:00',n:'晚餐 · Cuoco & Camicia',k:'eat',b:1,
+   m:[['Cuoco e Camicia','Cuoco e Camicia Via di Monte Polacco Roma'],['斗兽场夜景','Colosseum Rome']],
+   r:[['预订','TheFork · 2 人'],['时间','星期六 10月10日 18:30 (CEST)'],['姓名','Sunny Huan'],['邮箱','sunny.hyx@gmail.com'],['地址','Via di Monte Polacco 2/4, Roma'],['电话','+39 06 8892 2987']],
+   tip:['吃完步行 10 分钟就是斗兽场，可以顺路看夜景——明天白天就不用为夜景再跑一趟。'],
+   note:['18:30 是开门第一批，当地人通常 9 点才来，早到反而清静。有品鉴菜单也有单点，评价里不少人建议单点。无法按时抵达请提前取消。']}
+  ]},
+
+{ d:'2026-10-11', wd:'周日', city:'罗马市中心', sum:'13 小时徒步日 · 温差最大', wx:'晴 26° / 16°', hotel:3,
+  items:[
+  {t:'07:00',e:'07:20',n:'特莱维喷泉（许愿池）',k:'see',
+   m:[['Trevi Fountain','Trevi Fountain Rome']],
+   bring:['薄外套（清早只有 16°）'],
+   tip:['罗马今天日出约 7:20。7:00 到的时候天还没亮透，是蓝调时刻，喷泉还开着灯、几乎没有人——很可能是这趟最好的一张照片。用手机夜景模式。'],
+   note:['晚上的 ADEVA 餐厅就在旁边 2 分钟，白天先认认路。']},
+  {t:'07:25',e:'07:55',n:'西班牙台阶',k:'see',
+   m:[['Piazza di Spagna','Piazza di Spagna Rome']],
+   note:['步行 12 分钟。早上人少适合拍照。']},
+  {t:'08:00',e:'08:50',n:'步行回万神殿 + 路上吃早餐',k:'walk',
+   m:[['Pantheon','Pantheon Rome']],
+   note:['从西班牙广场走到万神殿约 18 分钟。路上随便找家 bar 站着喝杯 cappuccino 配 cornetto。']},
+  {t:'09:00',e:'09:45',n:'万神殿 Pantheon',k:'see',warnFlag:1,
+   m:[['Pantheon','Pantheon Rome']],
+   bring:['披肩（有着装要求：遮肩、过膝）','ID（记名票姓名要对得上）'],
+   warn:['这张票还没订！需要订 09:00 左右的场次（€7/人，官方走 Musei Italiani 平台）。10/11 是周日，上午 10:30 起因弥撒停止游客参观，09:00 几乎是当天唯一窗口。'],
+   note:['馆内没有寄存处，轻装。']},
+  {t:'09:50',e:'10:15',n:'纳沃纳广场',k:'see',
+   m:[['Piazza Navona','Piazza Navona Rome']],
+   note:['步行 7 分钟。贝尼尼四河喷泉。']},
+  {t:'10:20',e:'10:45',n:'Giolitti 冰淇淋',k:'eat',
+   m:[['Giolitti','Giolitti Via degli Uffici del Vicario 40 Rome']],
+   note:['离万神殿步行 5 分钟。早上吃冰淇淋也很罗马。']},
+  {t:'10:45',e:'11:10',n:'打车上山去博尔盖塞',k:'bus',warnFlag:1,
+   m:[['Galleria Borghese','Galleria Borghese Rome']],
+   warn:['导航一定要输 Galleria Borghese 或 Museo Borghese，不要只输 Villa Borghese——那是整个公园，会被导到别的入口。'],
+   note:['打车约 15 分钟；也可以步行穿 Pincio Gardens 上山，约 30–35 分钟（上坡）。']},
+  {t:'11:00',e:'13:00',n:'博尔盖塞美术馆',k:'see',b:1,
+   m:[['Galleria Borghese','Galleria Borghese Rome']],
+   r:[['时段','IN 11:00 – OUT 13:00'],['订单号','1302416575'],['取票码','Stampa@casa G4DBW8JN'],['持票人','FEI TENG'],['票价','€16 + €2 = €18'],['编号','id 174']],
+   bring:['打印好的纸质票（print-at-home）','小包（大件包要寄存，免费但要排队）'],
+   warn:['严格两小时制，13:00 必须离场。建议 10:40–10:50 就到门口。']},
+  {t:'13:00',e:'14:00',n:'Villa Borghese 公园散步 + 午餐',k:'see',
+   m:[['Villa Borghese','Villa Borghese Rome'],['Pincio 观景台','Terrazza del Pincio Rome']],
+   note:['看完出来就在公园里，可以慢慢走到 Pincio 观景台看全城。']},
+  {t:'14:00',e:'18:00',n:'自由活动：逛街 / 咖啡',k:'see',
+   m:[['Via del Corso','Via del Corso Rome']],
+   note:['18:30 在许愿池旁边有晚餐预订，范围建议留在 Trevi–Corso 一带，不用跑远。']},
+  {t:'18:30',e:'20:30',n:'晚餐 · ADEVA Cucina Moderna',k:'eat',b:1,warnFlag:1,
+   m:[['ADEVA','ADEVA Cucina Moderna Via dei Maroniti 29 Roma']],
+   r:[['预订','邮件确认 · 2 人'],['时间','18:30 · 占座到 20:30'],['地址','Via dei Maroniti 29, Roma'],['电话','+39 376 076 0016'],['推荐','Cacio e Pepe · Egg in the nest']],
+   warn:['餐厅要求回一封「OK」邮件才算最终确认。邮件上的 11/10/2026 是意大利的日/月格式，等于 10 月 11 日。晚到超过 15 分钟要提前通知，否则位子可能不保。桌子只留到 20:30。'],
+   note:['离许愿池步行 2 分钟。']}
+  ]},
+
+{ d:'2026-10-12', wd:'周一', city:'古罗马', sum:'全天露天 · 带伞', wx:'小阵雨 25° / 17°', hotel:3,
+  items:[
+  {t:'09:00',e:'10:30',n:'斗兽场 Colosseum',k:'see',warnFlag:1,
+   m:[['Colosseum','Colosseum Rome'],['Colosseo 地铁站','Colosseo metro station Rome']],
+   bring:['帽子、水、伞','运动鞋','身份证件（实名票要核对）'],
+   warn:['这张票还没订！官网 ticketing.colosseo.it，€18（€16 + €2），含古罗马广场和帕拉蒂尼山，同一张票 24 小时内有效。门票只在参观日前 30 天开售，现在正在窗口内。'],
+   note:['入内约 1.5 小时，最好请讲解。预订票走 Fila Prioritaria 快速通道（绿色标志），但所有人都要过安检。地铁 B 线 Colosseo 站离主入口 50 米。']},
+  {t:'10:30',e:'10:45',n:'君士坦丁凯旋门',k:'see',
+   m:[['Arch of Constantine','Arch of Constantine Rome']],
+   note:['就在斗兽场入口旁，免费，15 分钟。']},
+  {t:'10:45',e:'13:00',n:'古罗马广场 + 帕拉蒂尼山',k:'see',
+   m:[['Roman Forum','Roman Forum Rome'],['帕拉蒂尼山','Palatine Hill Rome']],
+   bring:['水、帽子'],
+   note:['和斗兽场联票。遮阴少。']},
+  {t:'13:00',e:'14:00',n:'午餐 @ Monti',k:'eat',m:[['Monti 区','Monti Rome']]},
+  {t:'14:15',e:'15:00',n:'卡比托利欧广场',k:'see',
+   m:[['Piazza del Campidoglio','Piazza del Campidoglio Rome']],
+   note:['米开朗基罗设计。']},
+  {t:'15:15',e:'15:30',n:'真理之口',k:'see',
+   m:[['Bocca della Verità','Bocca della Verita Rome']],
+   note:['在 Santa Maria in Cosmedin 教堂门廊里，免费，10–15 分钟。正好在古罗马广场和 Trastevere 之间，顺路拍张经典照片。']},
+  {t:'17:00',e:'21:00',n:'Trastevere 老城 + 最后一晚晚餐',k:'eat',
+   m:[['Trastevere','Trastevere Rome']],
+   warn:['明早 06:30 就要退房去机场，别太晚回酒店，行李今晚收好。'],
+   note:['这区周一晚上也很热闹，想吃好点的建议提前订位或早点去。']},
+  {t:'21:30',n:'网上值机 + 订明早的出租车',k:'walk',warnFlag:1,
+   m:[['Decòncept House','Deconcept House Viale Giulio Cesare 15 Roma']],
+   warn:['① AC9291 / AC9433 由汉莎执飞，值机走 Lufthansa 官网或 App（起飞前 24 小时开放）。② 让前台帮忙订明早 06:45 的出租车到 FCO（固定价 €50），清早不好打车。③ 确认机票托运额，跟去程瑞安不是一套规则。']}
+  ]},
+
+{ d:'2026-10-13', wd:'周二', city:'回温哥华', sum:'罗马 → 慕尼黑 → 温哥华', wx:'约 22° / 15°', hotel:null,
+  items:[
+  {t:'06:00',e:'06:40',n:'起床 + 退房',k:'stay',
+   m:[['Decòncept House','Deconcept House Viale Giulio Cesare 15 Roma']],
+   note:['早餐时间可能还没开始，机场或飞机上再吃。']},
+  {t:'06:45',e:'07:40',n:'出租车 → FCO T1',k:'bus',
+   m:[['FCO T1','Rome Fiumicino Airport Terminal 1']],
+   r:[['价格','€50 官方固定价'],['时长','清早约 40–50 分钟']],
+   note:['备选：地铁 A 线 Ottaviano → Termini 换 Leonardo Express（32 分钟 €14，首班约 05:20），但清早拖行李换乘不值得省这点钱。']},
+  {t:'07:40',e:'10:50',n:'FCO T1 值机 + 退税 + 安检',k:'walk',warnFlag:1,
+   m:[['FCO T1 出发厅','Rome Fiumicino Airport Terminal 1 Departures']],
+   bring:['退税单 + 要查验的商品放在手边（不能提前锁进托运箱）'],
+   warn:['退税必须在托运之前办，行李里的商品可能被要求查验，旺季排队半小时到一小时。FCO T1 安检高峰就在早上 7–9 点。'],
+   tip:['如果完全没有退税，可以晚 40 分钟出门（07:25 走）多睡一会儿。']},
+  {t:'10:50',e:'12:25',n:'AC9291 罗马 → 慕尼黑',k:'fly',b:1,w:'sunny',
+   m:[['慕尼黑 MUC T2','Munich Airport Terminal 2']],
+   r:[['航班','Air Canada 9291 · 汉莎执飞'],['机型','Airbus A321-200'],['时长','1 小时 35 分 · 经济舱 (K)'],['餐食','饮料 + 机上付费购买']],
+   note:['建议在罗马机场买点吃的带上。']},
+  {t:'12:25',e:'15:45',n:'慕尼黑中转 3 小时 20 分',k:'walk',w:'sunny',warnFlag:1,
+   m:[['MUC T2','Munich Airport Terminal 2']],
+   warn:['罗马→慕尼黑是申根区内航班，落地不用过关；但接下来飞温哥华要出申根区，所以出境章盖在慕尼黑，不是罗马。慕尼黑的退税柜台只处理德国购买的商品，意大利买的东西必须在罗马办完。'],
+   tip:['两段都在 T2，3 小时 20 分很充裕，可以慢慢走、吃个正经午饭。']},
+  {t:'15:45',e:'16:55',n:'AC9433 慕尼黑 → 温哥华',k:'fly',b:1,w:'sunny',
+   m:[['温哥华 YVR','Vancouver International Airport']],
+   r:[['航班','Air Canada 9433 · 汉莎执飞'],['机型','Airbus A350-900'],['时长','10 小时 10 分 · 含餐'],['到达','温哥华 Terminal M · 当天 16:55']],
+   note:['时差赚回一天，当天就到家。']}
+  ]}
+];
+
+
+
+const MAPQ = 'https://www.google.com/maps/search/?api=1&query=';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const KIND = {fly:'航班',train:'火车',bus:'车',boat:'船',walk:'',see:'',eat:'',stay:'住宿',meet:'集合'};
+function pin(){return '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>';}
+function mapsHtml(m){ if(!m||!m.length) return '';
+  return '<div class="maps">'+m.map(([l,q])=>'<a class="mp" href="'+MAPQ+encodeURIComponent(q)+'" target="_blank" rel="noopener">'+pin()+esc(l)+'</a>').join('')+'</div>'; }
+function blk(c,h,a){ if(!a||!a.length) return '';
+  return '<div class="blk '+c+'"><div class="h">'+h+'</div><ul>'+a.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>'; }
+
+function itemHtml(it){
+  const hi = it.b ? ' hi' : (it.warnFlag ? ' hw' : '');
+  let t = '';
+  if(it.b) t += '<span class="tag ok">已订</span>';
+  if(it.warnFlag) t += '<span class="tag wn">留意</span>';
+  if(it.w === 'sunny') t += '<span class="tag bl">SUNNY</span>';
+  if(it.w === 'tiffany') t += '<span class="tag pl">TIFFANY</span>';
+  if(KIND[it.k]) t += '<span class="tag">' + KIND[it.k] + '</span>';
+  let b = '';
+  if(it.r && it.r.length) b += '<dl class="rows" style="margin-top:0;margin-bottom:10px">' +
+    it.r.map(([k,v])=>'<div><dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd></div>').join('') + '</dl>';
+  b += blk('b-warn','注意事项', it.warn);
+  b += blk('b-bring','携带物品', it.bring);
+  b += blk('b-tip','小提示', it.tip);
+  b += blk('b-note','说明', it.note);
+  b += mapsHtml(it.m);
+  return '<li><div class="tm">'+esc(it.t)+(it.e?'<em>'+esc(it.e)+'</em>':'')+'</div>' +
+    '<details class="'+hi.trim()+'"><summary><div><div class="nm">'+esc(it.n)+'</div>' +
+    (t?'<div class="tgs">'+t+'</div>':'') + '</div><span class="chev"></span></summary>' +
+    '<div class="bd">'+b+'</div></details></li>';
+}
+
+/* 逐日 */
+document.getElementById('days').innerHTML = DAYS.map((d,i)=>{
+  const p = d.d.split('-'); const h = d.hotel!=null ? HOTELS[d.hotel] : null;
+  return '<article class="day" id="d'+i+'"><div class="dh">' +
+    '<b>'+(+p[1])+'/'+(+p[2])+'<small>'+d.wd+'</small></b>' +
+    '<div class="t"><h3>'+esc(d.city)+'</h3><div class="m">'+esc(d.sum)+
+      (d.wx?' · '+esc(d.wx):'')+(h?' · 住 '+esc(h.n):'')+'</div></div></div>' +
+    '<ol class="tl">'+d.items.map(itemHtml).join('')+'</ol></article>';
+}).join('');
+
+/* 预订一览 */
+(function(){
+  const G = {'跟团与门票':[], '餐厅':[], '火车与地面交通':[]};
+  DAYS.forEach(d => d.items.forEach(it => {
+    if(!it.b || it.k === 'fly' || it.k === 'stay') return;
+    const rec = {d:d, it:it};
+    if(it.k === 'eat') G['餐厅'].push(rec);
+    else if(it.k === 'meet' || it.k === 'see') G['跟团与门票'].push(rec);
+    else G['火车与地面交通'].push(rec);
+  }));
+  const pend = [];
+  DAYS.forEach(d => d.items.forEach(it => {
+    if((it.warn||[]).some(w => w.indexOf('还没订') >= 0)) pend.push({d:d, it:it});
+  }));
+  let h = '';
+  function card(r, warn){
+    const p = r.d.d.split('-'); const it = r.it;
+    let b = '<dl class="rows" style="margin-top:0;margin-bottom:10px"><div><dt>日期</dt><dd><b>'+
+      (+p[1])+'月'+(+p[2])+'日 '+r.d.wd+' · '+esc(it.t)+(it.e?'–'+esc(it.e):'')+'</b></dd></div>' +
+      (it.r||[]).map(([k,v])=>'<div><dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd></div>').join('')+'</dl>';
+    b += blk('b-warn','注意事项', it.warn);
+    b += blk('b-bring','携带物品', it.bring);
+    b += mapsHtml(it.m);
+    return '<details class="'+(warn?'hw':'hi')+'" style="margin-bottom:10px"><summary><div>' +
+      '<div class="nm">'+esc(it.n)+'</div><div class="tgs">' +
+      (warn?'<span class="tag cr">待订</span>':'<span class="tag ok">已订</span>') +
+      '</div></div><span class="chev"></span></summary><div class="bd">'+b+'</div></details>';
+  }
+  if(pend.length){
+    h += '<div class="sh" style="margin-top:6px"><h2 style="font-size:16px">还没订</h2><span>要抓紧</span></div>';
+    pend.forEach(r => h += card(r, true));
+  }
+  Object.keys(G).forEach(k => {
+    if(!G[k].length) return;
+    h += '<div class="sh" style="margin-top:14px"><h2 style="font-size:16px">'+k+'</h2><span>'+G[k].length+' 项</span></div>';
+    G[k].forEach(r => h += card(r, false));
+  });
+  document.getElementById('books').innerHTML = h;
+})();
+
+/* 航班 */
+(function(){
+  const F = [];
+  DAYS.forEach(d => d.items.forEach(it => { if(it.k === 'fly' && it.b) F.push({d:d, it:it}); }));
+  document.getElementById('flights').innerHTML = F.map(r => {
+    const it = r.it, p = r.d.d.split('-');
+    const g = k => { const f = (it.r||[]).find(x => x[0] === k); return f ? f[1] : ''; };
+    const t = (it.t||''), e = (it.e||'');
+    const name = it.n.split(' ');
+    const no = name[0];
+    const pair = it.n.replace(no, '').trim().split('→');
+    const extra = (it.r||[]).filter(x => ['航班','机型','时长','舱位','餐食','订单号','乘客','预订号','到达','入境'].indexOf(x[0]) >= 0)
+      .map(x => x[0] + '：' + x[1]).join(' · ');
+    return '<div class="fl"><div class="no">'+esc(no)+' · '+(+p[1])+'月'+(+p[2])+'日'+
+      (it.w==='sunny'?' <span class="tag bl">SUNNY</span>':'')+
+      (it.w==='tiffany'?' <span class="tag pl">TIFFANY</span>':'')+'</div>' +
+      '<div class="leg"><div class="pl"><div class="tm">'+esc(t)+'</div><div class="ct">'+esc((pair[0]||'').trim())+'</div></div>' +
+      '<div class="mid"><span class="pn">✈</span><span class="ln"></span></div>' +
+      '<div class="pl r"><div class="tm">'+esc(e)+'</div><div class="ct">'+esc((pair[1]||'').trim())+'</div></div></div>' +
+      (extra ? '<div class="ft">'+esc(extra)+'</div>' : '') + '</div>';
+  }).join('');
+})();
+
+/* 住宿 */
+document.getElementById('hotels').innerHTML = HOTELS.map(x =>
+  '<div class="card"><h3>'+esc(x.c)+' · '+esc(x.n)+'</h3><p class="sub">'+esc(x.d)+'</p>' +
+  '<dl class="rows"><div><dt>地址</dt><dd>'+esc(x.addr)+'</dd></div>' +
+  '<div><dt>电话</dt><dd><b>'+esc(x.tel)+'</b></dd></div>' +
+  '<div><dt>要点</dt><dd>'+esc(x.note)+'</dd></div></dl>' +
+  '<div style="margin-top:11px">'+mapsHtml([['打开地图', x.q]])+'</div></div>').join('');
+
+</script>
+</body>
+</html>
