@@ -361,7 +361,7 @@ details[open] .chev::after{transform:rotate(-135deg) translate(-1px,-1px)}
 </section>
 
 <section id="flights-s">
-  <div class="sh"><h2>航班</h2><span>去程 4 段 · 回程 2 段</span></div>
+  <div class="sh"><h2>航班</h2><span id="flcount">全程 7 段</span></div>
   <div id="flights"></div>
 </section>
 
@@ -812,24 +812,31 @@ const DAYS = [
    warn:['① AC9291 / AC9433 由汉莎执飞，值机走 Lufthansa 官网或 App（起飞前 24 小时开放）。② 让前台帮忙订明早 06:45 的出租车到 FCO（固定价 €50），清早不好打车。③ 确认机票托运额，跟去程瑞安不是一套规则。']}
   ]},
 
-{ d:'2026-10-13', wd:'周二', city:'回温哥华', sum:'罗马 → 慕尼黑 → 温哥华', wx:'约 22° / 15°', hotel:null,
+{ d:'2026-10-13', wd:'周二', city:'各自回家', sum:'Sunny 上午走 · Tiffany 晚上走', wx:'约 22° / 15°', hotel:null,
   items:[
-  {t:'06:00',e:'06:40',n:'起床 + 退房',k:'stay',
+  {t:'06:00',e:'06:40',n:'起床 + 退房',k:'stay',w:'sunny',
    m:[['Decòncept House','Deconcept House Viale Giulio Cesare 15 Roma']],
-   note:['早餐时间可能还没开始，机场或飞机上再吃。']},
-  {t:'06:45',e:'07:40',n:'出租车 → FCO T1',k:'bus',
+   note:['早餐时间可能还没开始，机场或飞机上再吃。Tiffany 晚上才走，不用跟着早起。']},
+  {t:'06:45',e:'07:40',n:'出租车 → FCO T1',k:'bus',w:'sunny',
    m:[['FCO T1','Rome Fiumicino Airport Terminal 1']],
    r:[['价格','€50 官方固定价'],['时长','清早约 40–50 分钟']],
    note:['备选：地铁 A 线 Ottaviano → Termini 换 Leonardo Express（32 分钟 €14，首班约 05:20），但清早拖行李换乘不值得省这点钱。']},
-  {t:'07:40',e:'10:50',n:'FCO T1 值机 + 退税 + 安检',k:'walk',warnFlag:1,
+  {t:'07:40',e:'10:50',n:'FCO T1 值机 + 退税 + 安检',k:'walk',warnFlag:1,w:'sunny',
    m:[['FCO T1 出发厅','Rome Fiumicino Airport Terminal 1 Departures']],
    bring:['退税单 + 要查验的商品放在手边（不能提前锁进托运箱）'],
    warn:['退税必须在托运之前办，行李里的商品可能被要求查验，旺季排队半小时到一小时。FCO T1 安检高峰就在早上 7–9 点。'],
    tip:['如果完全没有退税，可以晚 40 分钟出门（07:25 走）多睡一会儿。']},
+  {t:'10:00',e:'11:00',n:'退房 + 行李寄存前台',k:'stay',w:'tiffany',
+   m:[['Decòncept House','Deconcept House Viale Giulio Cesare 15 Roma']],
+   note:['航班晚上 21:10 才起飞，白天还有一整天。行李寄在前台，轻装出门。']},
   {t:'10:50',e:'12:25',n:'AC9291 罗马 → 慕尼黑',k:'fly',b:1,w:'sunny',
    m:[['慕尼黑 MUC T2','Munich Airport Terminal 2']],
    r:[['航班','Air Canada 9291 · 汉莎执飞'],['机型','Airbus A321-200'],['时长','1 小时 35 分 · 经济舱 (K)'],['餐食','饮料 + 机上付费购买']],
    note:['建议在罗马机场买点吃的带上。']},
+  {t:'11:00',e:'16:30',n:'罗马最后半天（自由活动）',k:'see',w:'tiffany',
+   m:[['Trastevere','Trastevere Rome'],['Via del Corso','Via del Corso Rome'],['Villa Borghese','Villa Borghese Rome']],
+   tip:['半天时间够去一个之前没排上的地方：Trastevere 慢慢逛、Villa Borghese 公园，或者纯粹在市中心买东西。'],
+   note:['别走太远，17:00 前要回酒店取行李。']},
   {t:'12:25',e:'15:45',n:'慕尼黑中转 3 小时 20 分',k:'walk',w:'sunny',warnFlag:1,
    m:[['MUC T2','Munich Airport Terminal 2']],
    warn:['罗马→慕尼黑是申根区内航班，落地不用过关；但接下来飞温哥华要出申根区，所以出境章盖在慕尼黑，不是罗马。慕尼黑的退税柜台只处理德国购买的商品，意大利买的东西必须在罗马办完。'],
@@ -837,7 +844,20 @@ const DAYS = [
   {t:'15:45',e:'16:55',n:'AC9433 慕尼黑 → 温哥华',k:'fly',b:1,w:'sunny',
    m:[['温哥华 YVR','Vancouver International Airport']],
    r:[['航班','Air Canada 9433 · 汉莎执飞'],['机型','Airbus A350-900'],['时长','10 小时 10 分 · 含餐'],['到达','温哥华 Terminal M · 当天 16:55']],
-   note:['时差赚回一天，当天就到家。']}
+   note:['时差赚回一天，当天就到家。']},
+  {t:'16:30',e:'17:30',n:'取行李 + 出租车 → FCO T3',k:'bus',w:'tiffany',warnFlag:1,
+   m:[['FCO T3','Rome Fiumicino Airport Terminal 3']],
+   r:[['价格','€50 官方固定价'],['车程','约 45–60 分钟（傍晚会堵）']],
+   warn:['⚠️ 是 T3 航站楼，不是 Sunny 早上走的 T1。上车跟司机说清楚 Terminal 3。']},
+  {t:'17:30',e:'21:10',n:'FCO T3 值机 + 退税 + 安检',k:'walk',w:'tiffany',warnFlag:1,
+   m:[['FCO T3','Rome Fiumicino Airport Terminal 3']],
+   bring:['退税单 + 要查验的商品放手边（不能提前锁进托运箱）'],
+   warn:['退税必须在托运之前办。T3 是罗马的国际长途航站楼，傍晚出港高峰，留足 3.5 小时不算多。'],
+   note:['东航柜台一般起飞前 3 小时开放。']},
+  {t:'21:10',e:'14:45',n:'MU788 罗马 → 上海浦东',k:'fly',b:1,w:'tiffany',
+   m:[['上海浦东 T1','Shanghai Pudong International Airport Terminal 1']],
+   r:[['航班','中国东方航空 MU788'],['机型','空客 A350-900 · 经济舱'],['时间','10/13 21:10 FCO T3 → 10/14 14:45 PVG T1'],['时长','11 小时 35 分 · 直飞'],['到达','上海浦东 T1（第二天下午）']],
+   note:['直飞，中间不用转机。落地是 10 月 14 日下午。']}
   ]}
 ];
 
