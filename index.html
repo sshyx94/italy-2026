@@ -274,7 +274,7 @@ details[open] .chev::after{transform:rotate(-135deg) translate(-1px,-1px)}
   <div id="days"></div>
 </section>
 
-<p class="foot">时间均为当地时间。跟团各段时长按凭证推算，以导游现场安排为准。地点旁的按钮会跳转 Google 地图。</p>
+<p class="foot">时间均为当地时间。跟团各段时长按凭证推算，以导游现场安排为准。地点旁的按钮会跳转 Google 地图。这是分享版，订单号、取票码和证件姓名已移除。</p>
 
 </div>
 <script>
@@ -311,14 +311,14 @@ const DAYS = [
    warn:['全程 15 小时 30 分。落地是当地早上，要在飞机上睡一觉——蒙特利尔起飞后尽早休息，当天下午还要逛索伦托，晚上 18:30 有 Lorelei 的位子。']},
   {t:'20:50',e:'05:55',n:'AY088 上海浦东 T2 → 赫尔辛基',k:'fly',w:'tiffany',b:1,
    m:[['浦东 T2','Shanghai Pudong International Airport Terminal 2'],['赫尔辛基万塔','Helsinki Vantaa Airport']],
-   r:[['时间','9/30 20:50 → 10/1 05:55'],['时长','14 小时 5 分'],['乘客','TENG/FEI'],['预订号','EF7DU8']]},
+   r:[['时间','9/30 20:50 → 10/1 05:55'],['时长','14 小时 5 分']]},
   {t:'05:55',e:'07:20',n:'赫尔辛基中转 1 小时 25 分',k:'walk',w:'tiffany',warnFlag:1,
    m:[['万塔机场','Helsinki Vantaa Airport']],
    warn:['这段最紧。上海来的是非申根到达，接下来飞那不勒斯是申根航班，要在赫尔辛基过一次护照查验——Tiffany 的入境章盖在赫尔辛基，不是意大利。下飞机跟着 Schengen 标志直接过关，别慢慢走。'],
-   tip:['两程同一个预订号 EF7DU8，万一延误没赶上，芬航负责改签，不用重新买票。']},
+   tip:['两程是同一个预订号，万一延误没赶上，芬航负责改签，不用重新买票。']},
   {t:'07:20',e:'09:50',n:'AY1791 赫尔辛基 → 那不勒斯',k:'fly',w:'tiffany',b:1,
    m:[['那不勒斯机场','Naples International Airport Capodichino']],
-   r:[['时间','07:20 → 09:50'],['时长','3 小时 30 分'],['预订号','EF7DU8']],
+   r:[['时间','07:20 → 09:50'],['时长','3 小时 30 分']],
    note:['申根内部航班，落地不用再过关，直接去行李转盘。']}
   ]},
 
@@ -390,7 +390,7 @@ const DAYS = [
   items:[
   {t:'08:15',n:'集合 @ Piazza Tasso',k:'meet',b:1,warnFlag:1,
    m:[['集合点 IAMME IA!','IAMME IA Gray Line Amalfi Coast Piazza Torquato Tasso 16 Sorrento']],
-   r:[['集合','08:15（提前 15 分钟）'],['出发','08:30'],['地点','IAMME IA! – Gray Line Amalfi Coast'],['地址','Piazza Torquato Tasso 16, Sorrento'],['订单号','Klook EEN466644'],['凭证','26/030395/001 · /002'],['电话','+39 081 877 0681'],['邮箱','info@iammeia.com']],
+   r:[['集合','08:15（提前 15 分钟）'],['出发','08:30'],['地点','IAMME IA! – Gray Line Amalfi Coast'],['地址','Piazza Torquato Tasso 16, Sorrento'],['电话','+39 081 877 0681']],
    bring:['电子凭证截图（山路信号差）','水壶、手持小风扇','防晒、帽子','现金（海岸游船要现场付）','包里塞一条红裙给 Ravello 换'],
    warn:['迟到或未到不退款。免费取消截止 10/02 08:30。'],
    tip:['办公室 07:00 开门。从酒店步行 6–8 分钟，08:00 出门足够。']},
@@ -428,7 +428,7 @@ const DAYS = [
   items:[
   {t:'07:15',n:'集合 @ 索伦托港 Molo \'52',k:'meet',b:1,warnFlag:1,
    m:[['集合点 Molo 52','IAMME IA Lounge Molo 52 Piazza Marinai d Italia 33 Sorrento']],
-   r:[['集合','07:15（提前 15 分钟）'],['出发','07:30'],['地点','IAMME IA! Lounge by Restaurant Molo \'52'],['地址','Piazza Marinai d\'Italia 33, Sorrento'],['订单号','Klook GZM970583'],['凭证','26/030963/001 · /002'],['电话','+39 081 877 0681']],
+   r:[['集合','07:15（提前 15 分钟）'],['出发','07:30'],['地点','IAMME IA! Lounge by Restaurant Molo \'52'],['地址','Piazza Marinai d\'Italia 33, Sorrento'],['电话','+39 081 877 0681']],
    bring:['电子凭证','泳衣（穿在里面）','防晒（海面反光强）','有下颌绳的草帽','现金（缆车、花园都自费）'],
    warn:['迟到或未到不退款。免费取消截止 10/03 07:30。酒店前台 8 点才上班，今天要用的东西前一晚就备好。'],
    tip:['早上 7 点前别赌时间，直接打车下港口（酒店到 Marina Piccola 约 1 公里下坡）。']},
@@ -471,7 +471,7 @@ const DAYS = [
    note:['无餐食，过安检后买点吃的。']},
   {t:'15:55',e:'16:55',n:'FR048 那不勒斯 → 巴勒莫',k:'fly',b:1,
    m:[['巴勒莫机场 PMO','Palermo Falcone Borsellino Airport']],
-   r:[['航班','瑞安 FR048 · Malta Air 执飞'],['时间','15:55 NAP → 16:55 PMO'],['舱位','经济舱 · 无餐食'],['订单号','携程 1128148413367246'],['乘客','HUAN/YU XIN · TENG/FEI']]},
+   r:[['航班','瑞安 FR048 · Malta Air 执飞'],['时间','15:55 NAP → 16:55 PMO'],['舱位','经济舱 · 无餐食']]},
   {t:'17:30',e:'18:40',n:'机场大巴 → 巴勒莫市区',k:'bus',
    m:[['Politeama 广场','Piazza Politeama Palermo'],['Palermo Centrale','Palermo Centrale railway station']],
    r:[['班车','Prestia e Comandè'],['时长','50–60 分钟'],['票价','€6.5 左右'],['班次','5:00–次日 0:30 每 30 分钟']],
@@ -518,7 +518,7 @@ const DAYS = [
    note:['提前 30–40 分钟到站。从酒店步行约 15 分钟，拖箱子建议留 20 分钟或直接打车。今天上午巴勒莫不要安排其他活动。']},
   {t:'08:22',e:'11:16',n:'5354 巴勒莫 → 墨西拿',k:'train',b:1,
    m:[['Messina Centrale','Messina Centrale railway station']],
-   r:[['车次','Regionale Veloce 5354'],['座位','二等座 · 280 公里'],['票号','2920557509'],['乘客','YUXIN HUAN'],['票价','票面 €18.20 · 订单 €36.1'],['经停','Palermo → Fiumetorto → Messina → Taormina-Giardini']]},
+   r:[['车次','Regionale Veloce 5354'],['座位','二等座 · 280 公里'],['票价','票面 €18.20 · 订单 €36.1'],['经停','Palermo → Fiumetorto → Messina → Taormina-Giardini']]},
   {t:'11:16',e:'11:55',n:'墨西拿换乘（39 分钟）',k:'train',
    m:[['Messina Centrale','Messina Centrale railway station']],
    warn:['时间不算宽裕但够用。下车后先看屏幕确认 12969 的站台。']},
@@ -574,7 +574,7 @@ const DAYS = [
    note:['瑞安建议提前 2.5–3 小时。无餐食，过安检后买点吃的。随身行李尺寸提前量好。']},
   {t:'15:40',e:'17:10',n:'FR4871 卡塔尼亚 → 罗马',k:'fly',b:1,
    m:[['罗马 FCO T1','Rome Fiumicino Airport Terminal 1']],
-   r:[['航班','瑞安 FR4871 · Malta Air 执飞'],['时间','15:40 CTA → 17:10 FCO T1'],['时长','1 小时 30 分'],['订单号','携程 1128148413367246']]},
+   r:[['航班','瑞安 FR4871 · Malta Air 执飞'],['时间','15:40 CTA → 17:10 FCO T1'],['时长','1 小时 30 分']]},
   {t:'17:45',e:'19:00',n:'FCO → 罗马市区',k:'bus',
    m:[['Decòncept House','Deconcept House Viale Giulio Cesare 15 Roma'],['Roma Termini','Roma Termini railway station']],
    tip:['晚上七点多到，建议直接打车（市中心官方固定价 €50，直接到酒店门口），别拖着行李折腾换乘。'],
@@ -594,7 +594,7 @@ const DAYS = [
    warn:['入口在 Viale Vaticano，不是圣彼得广场那一侧。从酒店步行约 15–18 分钟，或地铁 A 线 Ottaviano 坐一站到 Cipro。']},
   {t:'10:10',e:'10:30',n:'梵蒂冈博物馆入场',k:'see',b:1,warnFlag:1,
    m:[['Vatican Museums','Vatican Museums']],
-   r:[['票上时间','10:30（提前 20 分钟到）'],['Codice','2L2NFHKA19XTF1VGK'],['Visita','10733/2026-60'],['人数','Pax 1–2'],['入口','CORRIDOIO1 \\ PASSAGEWAY1']],
+   r:[['票上时间','10:30（提前 20 分钟到）'],['人数','Pax 1–2'],['入口','CORRIDOIO1 \\ PASSAGEWAY1']],
    bring:['纸质票备份','遮肩披肩','轻便包（馆内闷热，外套要能随时脱）'],
    warn:['两步流程：① 先把票给博物馆外面的 Customer Care 工作人员看 ② 再到一楼（first floor）闸机验票。着装必须遮肩遮膝，工作人员有权拒绝入场。']},
   {t:'10:30',e:'13:30',n:'博物馆 + 西斯廷教堂',k:'see',
@@ -614,7 +614,7 @@ const DAYS = [
    note:['约 4 公里。打车 20–25 分钟（周六傍晚会堵），或地铁 A 线 Ottaviano → Termini 换 B 线 → Cavour 站，出站步行 5 分钟。留足 30–40 分钟。']},
   {t:'18:30',e:'21:00',n:'晚餐 · Cuoco & Camicia',k:'eat',b:1,
    m:[['Cuoco e Camicia','Cuoco e Camicia Via di Monte Polacco Roma'],['斗兽场夜景','Colosseum Rome']],
-   r:[['预订','TheFork · 2 人'],['时间','星期六 10月10日 18:30 (CEST)'],['姓名','Sunny Huan'],['邮箱','sunny.hyx@gmail.com'],['地址','Via di Monte Polacco 2/4, Roma'],['电话','+39 06 8892 2987']],
+   r:[['预订','TheFork · 2 人'],['时间','星期六 10月10日 18:30 (CEST)'],['地址','Via di Monte Polacco 2/4, Roma'],['电话','+39 06 8892 2987']],
    tip:['吃完步行 10 分钟就是斗兽场，可以顺路看夜景——明天白天就不用为夜景再跑一趟。'],
    note:['18:30 是开门第一批，当地人通常 9 点才来，早到反而清静。有品鉴菜单也有单点，评价里不少人建议单点。无法按时抵达请提前取消。']}
   ]},
@@ -649,7 +649,7 @@ const DAYS = [
    note:['打车约 15 分钟；也可以步行穿 Pincio Gardens 上山，约 30–35 分钟（上坡）。']},
   {t:'11:00',e:'13:00',n:'博尔盖塞美术馆',k:'see',b:1,
    m:[['Galleria Borghese','Galleria Borghese Rome']],
-   r:[['时段','IN 11:00 – OUT 13:00'],['订单号','1302416575'],['取票码','Stampa@casa G4DBW8JN'],['持票人','FEI TENG'],['票价','€16 + €2 = €18'],['编号','id 174']],
+   r:[['时段','IN 11:00 – OUT 13:00'],['票价','€16 + €2 = €18']],
    bring:['打印好的纸质票（print-at-home）','小包（大件包要寄存，免费但要排队）'],
    warn:['严格两小时制，13:00 必须离场。建议 10:40–10:50 就到门口。']},
   {t:'13:00',e:'14:00',n:'Villa Borghese 公园散步 + 午餐',k:'see',
